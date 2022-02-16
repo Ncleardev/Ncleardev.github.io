@@ -1,5 +1,7 @@
 body {
     font-family: 'Open Sans Condensed', sans-serif;
+    animation-name: welcome;
+    animation-duration: 1s;
 }
 
 html {
@@ -18,6 +20,8 @@ img {
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
+    animation-name: welcome;
+    animation-duration: 5s;
 }
 
 h1 {
@@ -92,21 +96,28 @@ a:active {
 
 .end {
     margin-left: 90%;
-    margin-top:350px;
+    margin-top:50px;
+    animation-name: click;
+    animation-duration: 1s;
 }
 
 div.stuff {
-    margin: 5px;
-    border: 10px solid white;
-    float: left;
-    width: 30%;
-    height:450px;
-    background-color: rgb(50, 50, 50);
-    transition: 0.4s all;
-    border-radius: 20px;
-    min-width: 150px;
-    margin-left: 12%;
-  }
+  margin: 5px;
+  border: 10px solid white;
+  float: left;
+  width: 30%;
+  height:450px;
+  background-color: rgb(50, 50, 50);
+  transition: 0.4s all;
+  border-radius: 20px;
+  min-width: 150px;
+  margin-left: 12%;
+  position: relative;
+  animation-name: nogravity;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
   
   div.stuff:hover {
     border: 10px solid rgb(50, 50, 50);;
@@ -124,4 +135,15 @@ div.stuff {
 
 .contact {
   margin-top: 600px
+}
+
+@keyframes nogravity {
+  0%   {top:0px;}
+  50%  {top:30px;}
+  100% {top:0px;}
+}
+
+@keyframes welcome {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
 }
