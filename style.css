@@ -1,0 +1,127 @@
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: 0.6s all;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: 0.6s all;
+}
+
+a:active {
+  color: rgb(69, 0, 255);
+  background-color: transparent;
+  text-decoration: underline;
+  transition: 0.2s all;
+}
+
+.topnav {
+    background-color: #363636;
+    overflow: hidden;
+    height: 25px;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+  }
+
+.topnav a {
+    color: #f2f2f2;
+    padding: 15px 50px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    transition: 0.4s all;
+  }
+
+.end a{
+    text-decoration: none;
+    text-align: right;
+    background-color: black;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 5px;
+    border-radius: 50%;
+}
+
+.end {
+    margin-left: 90%;
+    margin-top:350px;
+}
+
+div.stuff {
+    margin: 5px;
+    border: 10px solid white;
+    float: left;
+    width: 30%;
+    height:450px;
+    background-color: rgb(50, 50, 50);
+    transition: 0.4s all;
+    border-radius: 20px;
+    min-width: 150px;
+    margin-left: 12%;
+  }
+  
+  div.stuff:hover {
+    border: 10px solid rgb(50, 50, 50);;
+    transition: 0.4s all;
+  }
+  
+  div.stuff img {
+    max-height: 300px;
+  }
+
+.stuff h1 {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.contact {
+  margin-top: 600px
+}
