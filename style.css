@@ -1,58 +1,70 @@
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    animation-name: welcome;
-    animation-duration: 1s;
+  font-family: 'Open Sans Condensed';
+  background-color: #404040;
+  background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
+  background-size: 200% 100%;
+  animation: colors 3s infinite;
 }
 
+@keyframes colors {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 0%;}
+  100% {background-position: 0% 0%;}
+}
+    
 html {
     scroll-behavior: smooth;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 img {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-    animation-name: welcome;
-    animation-duration: 5s;
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  animation-name: welcome3;
+  animation-duration: 5s;
+}
+
+.mainimg img{
+  max-height: 100%;
+  max-width: 100%;
+  animation-name: welcome2;
 }
 
 h1 {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
-
 h3 {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
 a:link {
   color: white;
   background-color: transparent;
   text-decoration: underline;
-  transition: 0.6s all;
+  transition: 0.5s all;
 }
 
 a:visited {
   color: white;
   background-color: transparent;
   text-decoration: none;
+  transition: 0.5s all;
 }
 
 a:hover {
-  color: red;
-  background-color: transparent;
+  color: black;
+  outline-width: 10px;
   text-decoration: underline;
-  transition: 0.6s all;
+  transition: 0.4s all;
 }
 
 a:active {
@@ -63,26 +75,41 @@ a:active {
 }
 
 .topnav {
-    background-color: #363636;
-    overflow: hidden;
-    height: 25px;
-    width: 100%;
-    padding: 10px;
-    text-align: right;
-  }
+  position: fixed;
+  z-index: 999;
+  background-color: black;
+  overflow: hidden;
+  height: 25px;
+  width: 100%;
+  padding: 10px;
+  text-align: right;
+  opacity: 70%;
+  animation: welcome 3s linear;
+}
 
 .topnav a {
-    color: #f2f2f2;
-    padding: 15px 50px;
-    text-decoration: none;
-    font-size: 20px;
-  }
+  color: #f2f2f2;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#time {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  right: 49%;
+}
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    transition: 0.4s all;
-  }
+  background-color: gray;
+  transition: 0.4s all;
+}
+
+.topnav a:active {
+  background-color: white;
+  transition: 0.2s all;
+}
 
 .end a{
     text-decoration: none;
@@ -95,46 +122,20 @@ a:active {
 }
 
 .end {
-    margin-left: 90%;
-    margin-top:50px;
-    animation-name: click;
-    animation-duration: 1s;
-}
-
-div.stuff {
-  margin: 5px;
-  border: 10px solid white;
-  float: left;
-  width: 30%;
-  height:450px;
-  background-color: rgb(50, 50, 50);
-  transition: 0.4s all;
-  border-radius: 20px;
-  min-width: 150px;
-  margin-left: 12%;
+  bottom: 10px;
+  right: 10px;
+  margin-left: 90%;
   position: relative;
-  animation-name: nogravity;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-  
-  div.stuff:hover {
-    border: 10px solid rgb(50, 50, 50);;
-    transition: 0.4s all;
-  }
-  
-  div.stuff img {
-    max-height: 300px;
-  }
-
-.stuff h1 {
-    padding-top: 15px;
-    text-align: center;
 }
 
-.contact {
-  margin-top: 600px
+.end a:hover {
+  color: red;
+  transition: 0.4s all;
+}
+
+.end a:active {
+  color: blue;
+  transition: 0.4s all;
 }
 
 @keyframes nogravity {
@@ -144,6 +145,69 @@ div.stuff {
 }
 
 @keyframes welcome {
-  0%   {opacity: 0;}
-  100% {opacity: 1;}
+  0% {opacity: 0;}
+  40% {opacity: 0;}
+  100% {opacity: 70%;}
+}
+
+@keyframes welcome2 {
+  0% {opacity: 0;filter: blur(20px);}
+  10% {opacity: 0;filter: blur(20px);}
+  70% {opacity: 100%;}
+  100% {opacity: 100%;filter: blur(0);}
+}
+
+@keyframes welcome3 {
+  0% {opacity: 0;}
+  10% {opacity: 0;}
+  100% {opacity: 100%;}
+}
+
+h1, h3, marquee {
+  animation: welcome3 5s linear;
+}
+
+marquee {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: xx-large;
+  position: absolute;
+}
+
+.stuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: welcome3 5s;
+}
+
+div.gallery {
+  border: 8px solid white;
+  border-radius: 15px;
+  transition: 0.1s all;
+  width: 45%;
+  max-width: 350px;
+  height: 420px;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation-name: nogravity;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
+}
+
+div.gallery:hover {
+  transform: scale(105%);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.1s all;
+}
+
+div.gallery img {
+  margin: auto;
+  max-height: 300px;
+  max-width: 100%;
+}
+
+#img2 {
+  margin-top: 100px;
 }

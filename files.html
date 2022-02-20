@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS">
+    <title>Nclear - Small programs</title>
+    <link rel = "icon" href = "files/ico2.png"> 
+  </head>
+  <body onload="startTime()">
+    <marquee direction="right">Welcome to my website! Time is <text id="time"></text></marquee>
+    <script src="script.js"></script>
+    <a href="index.html">Go back to main page<br><br><br></a>
+    <a href="files/small program.zip">A little batch program with a surprise</a><br><br>
+    <div id="hide">
+      <a href="files/NclearOS.iso">NclearOS Alpha Version</a>
+      <b> - a </b>
+      <a href="https://www.gocosmos.org/" target="_blank">Cosmos</a>
+      <b> based Operating System</b><br><br>
+    </div>
+    <text>More coming soon</text>
+    <text id="k" style="opacity: 0;">_</text>
+  </body>
+  <style>
+		body {
+      font-family: 'consolas';
+      background-color: #404040;
+      background: linear-gradient(90deg, black, rgb(100, 100, 100));
+      background-size: 200% 100%;
+      animation: colors 5s ease-in-out infinite;
+      color: #4fcd51;
+      margin: 20px;
+    }
+
+    #hide {
+      display: none;
+    }
+
+    text, a, marquee, b {
+      animation: q 1s linear;
+      font-size: large;
+    }
+
+    @keyframes q {
+      0% {opacity: 0;}
+      90% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    #k {
+      animation: o 1s linear infinite 1s;
+    }
+
+    @keyframes o {
+      0% {opacity: 0;}
+      10% {opacity: 1;}
+      50% {opacity: 1;}
+      60% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+
+    @keyframes colors {
+      0% {background-position: 0% 0%;}
+      50% {background-position: 100% 0%;}
+      100% {background-position: 0% 0%;}
+    }
+    a:link {
+      color: #4fcd51;
+      background-color: transparent;
+      text-decoration: underline;
+      transition: 0.6s all;
+      }
+
+      a:visited {
+        color: #4fcd51;
+        background-color: transparent;
+        text-decoration: none;
+        transition: 0.6s all;
+      }
+
+      a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+        transition: 0.6s all;
+      }
+
+      a:active {
+        color: rgb(69, 0, 255);
+        background-color: transparent;
+        text-decoration: underline;
+        transition: 0.2s all;
+      }
+	</style>
+</html>
