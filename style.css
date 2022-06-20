@@ -3,20 +3,29 @@ body {
   background-color: #404040;
   background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
   background-size: 200% 100%;
-  animation: colors 3s infinite;
+  animation: colors 10s infinite;
 }
 
 @keyframes colors {
-  0% {background-position: 0% 0%;}
-  50% {background-position: 100% 0%;}
-  100% {background-position: 0% 0%;}
-}
-    
-html {
-    scroll-behavior: smooth;
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -30,20 +39,17 @@ img {
   animation-duration: 5s;
 }
 
-.mainimg img{
+.mainimg img {
   max-height: 100%;
   max-width: 100%;
   animation-name: welcome2;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-}
-
+h1,
 h3 {
   color: white;
   text-align: center;
+  animation: welcome3 5s linear;
 }
 
 a:link {
@@ -102,23 +108,23 @@ a:active {
 }
 
 .topnav a:hover {
-  background-color: gray;
+  text-shadow: 0 0 70px white, 0 0 60px white, 0 0 50px white, 0 0 40px white, 0 0 30px white, 0 0 20px white, 0 0 10px white, 0 0 5px white;
   transition: 0.4s all;
 }
 
 .topnav a:active {
-  background-color: white;
+  text-shadow: none;
   transition: 0.2s all;
 }
 
-.end a{
-    text-decoration: none;
-    text-align: right;
-    background-color: black;
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-top: 5px;
-    border-radius: 50%;
+.end a {
+  text-decoration: none;
+  text-align: right;
+  background-color: black;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 5px;
+  border-radius: 50%;
 }
 
 .end {
@@ -129,42 +135,70 @@ a:active {
 }
 
 .end a:hover {
-  color: red;
-  transition: 0.4s all;
-}
-
-.end a:active {
-  color: blue;
-  transition: 0.4s all;
+  background-color: white;
+  transition: 0.3s all;
 }
 
 @keyframes nogravity {
-  0%   {top:0px;}
-  50%  {top:30px;}
-  100% {top:0px;}
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 30px;
+  }
+
+  100% {
+    top: 0px;
+  }
 }
 
 @keyframes welcome {
-  0% {opacity: 0;}
-  40% {opacity: 0;}
-  100% {opacity: 70%;}
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 70%;
+  }
 }
 
 @keyframes welcome2 {
-  0% {opacity: 0;filter: blur(20px);}
-  10% {opacity: 0;filter: blur(20px);}
-  70% {opacity: 100%;}
-  100% {opacity: 100%;filter: blur(0);}
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 100%;
+    filter: blur(0);
+  }
 }
 
 @keyframes welcome3 {
-  0% {opacity: 0;}
-  10% {opacity: 0;}
-  100% {opacity: 100%;}
-}
+  0% {
+    opacity: 0;
+  }
 
-h1, h3, marquee {
-  animation: welcome3 5s linear;
+  10% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 marquee {
@@ -172,6 +206,7 @@ marquee {
   text-shadow: 2px 2px 2px black;
   font-size: xx-large;
   position: absolute;
+  animation: welcome3 5s linear;
 }
 
 .stuff {
@@ -179,6 +214,10 @@ marquee {
   justify-content: center;
   align-items: center;
   animation: welcome3 5s;
+}
+
+#glow {
+  text-shadow: 0 0 50px #fff, 0 0 30px #ffffff, 0 0 15px #ffffff, 0 0 5px;
 }
 
 div.gallery {
@@ -209,5 +248,47 @@ div.gallery img {
 }
 
 #img2 {
-  margin-top: 100px;
+  margin-top: 90px;
+}
+
+#img3 {
+  width: 180px;
+  margin-top: 70px;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 10px;
+  border-radius: 25px;
+  transition: 0.2s all;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#dc:hover {
+  background: #5865F2;
+  box-shadow: 0 0px 10px #5865F2, 0 0px 20px #5865F2;
+}
+
+#github:hover {
+  background: #333;
+  box-shadow: 0 0px 10px #333, 0 0px 20px #333;
+}
+
+#reddit:hover {
+  background: #FF5700;
+  box-shadow: 0 0px 10px #FF5700, 0 0px 20px #FF5700;
+}
+
+#email:hover {
+  background: limegreen;
+  box-shadow: 0 0px 10px limegreen, 0 0px 20px limegreen;
 }
