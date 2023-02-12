@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="Keywords" content="NclearOS> <meta name=" Description"
+        content="Frequently asked questions about NclearOS and NclearOS2">
+    <meta name="theme-color" content="#ffffff" />
+    <title>NclearOS FAQ</title>
+    <link rel="icon" href="icon.png">
+</head>
+
+<body>
+    <text>
+        <a href="https://ncleardev.github.io/nclearos">NclearOS</a>
+        <h1>FAQ</h1>
+
+        <button class="accordion">System Requriments for NclearOS</button>
+        <div class="panel">
+            CPU: x86<br>
+            RAM: Minimum 38 MB, Recommended 48 MB<br>
+            A bootable Pendrive / Optical Disk<br>
+            USB Keyboard (laptop built-in keyboard may not work)
+        </div><br>
+        <button class="accordion">System Requriments for NclearOS 2</button>
+        <div class="panel">
+            CPU: x86<br>
+            RAM: Minimum 128 MB, Recommended 256 MB<br>
+            Graphics: Minimum VGA, Recommended SVGA<br>
+            A bootable Pendrive / Optical Disk<br>
+            Mouse and USB Keyboard (laptop built-in keyboard may not work)
+        </div><br>
+        <button class="accordion">How to run NclearOS on VMware?</button>
+        <div class="panel">
+            1. Download the NclearOS .iso file from github: <a target="_blank"
+                href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a>, <a
+                target="_blank"
+                href="https://github.com/Ncleardev/NclearOS-2/archive/refs/heads/main.zip">NclearOS2</a><br>
+            2. Launch VMware Player/Workstation.<br>
+            3. Proceed with steps provided on <a target="_blank" href="https://kb.vmware.com/s/article/1002">this
+                site</a><br>
+            4. Start virtual machine.<br>
+            If you want OS to work with files download <a target="_blank"
+                href="https://github.com/CosmosOS/Cosmos/blob/master/Build/VMWare/Workstation/Filesystem.vmdk?raw=true">.vmdk
+                file</a> and use it as a hard disk in VM options.
+        </div><br>
+        <button class="accordion">How to run NclearOS on VirtualBox?</button>
+        <div class="panel">
+            1. Download the NclearOS .iso file from github: <a target="_blank"
+                href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a>, <a
+                target="_blank"
+                href="https://github.com/Ncleardev/NclearOS-2/archive/refs/heads/main.zip">NclearOS2</a><br>
+            2. Launch VirtualBox.<br>
+            3. Proceed with steps provided on <a target="_blank"
+                href="https://www.virtualbox.org/manual/UserManual.html#create-vm-wizard">this site</a><br>
+            4. Start virtual machine.<br>
+            If you want OS to work with files create new .vhd Virtual Hard Disk file using Virtual Media Manager in
+            VirtualBox. Then you need to format it using FAT32 filesystem - one way to do it is using Windows built-in
+            Disk
+            Management: In top corner click Action>Attach VHD. Initiliazi it by selecting MBR and add new simple volume.
+            Then detach it, run VM and Format new disk in NclearOS.
+        </div><br>
+    </text>
+</body>
+<style>
+    .accordion {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-family: Consolas, Lato;
+        font-size: xx-large;
+        color: #4fcd51;
+        transition: 1s all;
+    }
+
+    .active,
+    .accordion:hover {
+        color: white;
+        transition: 0s all;
+    }
+
+    .panel {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    
+    html{
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: Consolas, Lato;
+        font-size: large;
+        background-color: #004dff;
+        backdrop-filter: brightness(50%);
+        color: #4fcd51;
+        border-radius: 20px;
+        padding: 20px;
+        animation: q 1s ease;
+        transform: perspective(75em) rotateX(10deg);
+        margin: 3%;
+        max-width: 100%;
+    }
+
+    text,
+    marquee {
+        word-wrap: break-word;
+    }
+
+    h5 {
+        font-size: xx-large;
+    }
+
+    @keyframes q {
+        0% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0;
+            transform: perspective(75em) rotateX(30deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: perspective(75em) rotateX(10deg);
+        }
+    }
+
+    a:link,
+    a:visited {
+        color: #4fcd51;
+        text-decoration: underline;
+        transition: 1s all;
+    }
+
+    a:hover {
+        color: white;
+        text-decoration: underline;
+        transition: 0s all;
+    }
+
+    a:active {
+        color: rgb(69, 0, 255);
+        text-decoration: underline;
+        transition: 0.1s all;
+    }
+</style>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+</script>
