@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <meta name="Keywords" content="NclearOS> <meta name=" Description"
+    <meta name="Keywords" content="NclearOS"> <meta name=" Description"
         content="Frequently asked questions about NclearOS and NclearOS2">
     <meta name="theme-color" content="#ffffff" />
     <title>NclearOS FAQ</title>
@@ -12,7 +12,7 @@
 
 <body>
     <text>
-        <a href="https://ncleardev.github.io/nclearos">NclearOS</a>
+        <a href="https://ncleardev.github.io/nclearos" style="font-size: xx-large">NclearOS</a>
         <h1>FAQ</h1>
 
         <button class="accordion">System Requriments for NclearOS</button>
@@ -32,10 +32,9 @@
         </div><br>
         <button class="accordion">How to run NclearOS on VMware?</button>
         <div class="panel">
-            1. Download the NclearOS .iso file from github: <a target="_blank"
-                href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a>, <a
+            1. Download the NclearOS .iso file from github: <a target="_blank" href="https://github.com/Ncleardev/NclearOS/releases/latest">NclearOS</a>, <a
                 target="_blank"
-                href="https://github.com/Ncleardev/NclearOS-2/archive/refs/heads/main.zip">NclearOS2</a><br>
+                href="https://github.com/Ncleardev/NclearOS-2/releases/latest">NclearOS2</a><br>
             2. Launch VMware Player/Workstation.<br>
             3. Proceed with steps provided on <a target="_blank" href="https://kb.vmware.com/s/article/1002">this
                 site</a><br>
@@ -55,11 +54,20 @@
                 href="https://www.virtualbox.org/manual/UserManual.html#create-vm-wizard">this site</a><br>
             4. Start virtual machine.<br>
             If you want OS to work with files create new .vhd Virtual Hard Disk file using Virtual Media Manager in
-            VirtualBox. Then you need to format it using FAT32 filesystem - one way to do it is using Windows built-in
+            VirtualBox. Then you need to format it using FAT32 filesystem - one way to do it is by using Windows built-in
             Disk
-            Management: In top corner click Action>Attach VHD. Initiliazi it by selecting MBR and add new simple volume.
-            Then detach it, run VM and Format new disk in NclearOS.
+            Management: In top corner select Action>Attach VHD. Initialize it by selecting MBR and add new simple volume.
+                Detach VHD, run VM and format new disk in NclearOS.
         </div><br>
+        <button class="accordion">How to edit NclearOS code?</button>
+        <div class="panel">
+            1. Download <a target="_blank"
+                href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a> or <a
+                target="_blank"
+                href="https://github.com/Ncleardev/NclearOS-2/archive/refs/heads/main.zip">NclearOS2</a> source code.<br>
+                2. Create new CosmosOS project in Visual Studio.<br>
+                3. Extract files from .zip to %USERPROFILE%\source\repos\(your project name)
+        </div>
     </text>
 </body>
 <style>
