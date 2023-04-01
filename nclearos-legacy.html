@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="nclearos, cosmosos, cosmos os, os, operating system">
+  <meta name="Description" content="NclearOS">
+  <title>NclearOS</title>
+  <link rel="icon" href="files/ico.png">
+</head>
+<body>
+  <text id="k2" style="opacity: 0;">▌</text>
+  <b>NclearOS - a </b><a href="https://www.gocosmos.org/" target="_blank">Cosmos</a><b> based Console Operating
+    System</b>
+  <text id="k" style="opacity: 0;"> ▌</text><br><br>
+  <img src="https://raw.githubusercontent.com/Ncleardev/NclearOS/main/Screenshots/1.png"><br><br>
+  <a href="https://github.com/Ncleardev/NclearOS/releases/latest" target="_blank">Download</a>
+  <a href="https://github.com/Ncleardev/NclearOS" target="_blank">Source Code</a>
+  <a href="#help">FAQ</a>
+  <h5><a href="https://ncleardev.github.io/nclearos" target="_blank">NclearOS 2</a> also available</h5><br><br>
+  <img src="https://raw.githubusercontent.com/Ncleardev/NclearOS/main/Screenshots/2.png"><br><br>
+  <img src="https://raw.githubusercontent.com/Ncleardev/NclearOS/main/Screenshots/3.png"><br><br>
+  <img src="https://raw.githubusercontent.com/Ncleardev/NclearOS/main/Screenshots/4.png"><br><br>
+  <text id="help">
+    <button class="accordion">System Requriments for NclearOS</button>
+    <div class="panel">
+      CPU: x86<br>
+      RAM: Minimum 38 MB, Recommended 48 MB<br>
+      A bootable Pendrive / Optical Disk<br>
+      USB Keyboard (laptop built-in keyboard may not work)
+    </div><br>
+    <button class="accordion">Running NclearOS on VMware</button>
+    <div class="panel">
+      1. Download the <a target="_blank" href="https://github.com/Ncleardev/NclearOS/releases/latest">NclearOS</a>
+      .iso file from GitHub.<br>
+      2. Launch VMware Player/Workstation.<br>
+      3. Proceed with steps provided on <a target="_blank" href="https://kb.vmware.com/s/article/1002">this
+        site</a><br>
+      4. Start virtual machine.<br>
+      If you want OS to work with files download <a target="_blank"
+        href="https://github.com/CosmosOS/Cosmos/blob/master/Build/VMWare/Workstation/Filesystem.vmdk?raw=true">.vmdk
+        file</a> and use it as a hard disk in VM options.
+    </div><br>
+    <button class="accordion">Running NclearOS on VirtualBox</button>
+    <div class="panel">
+      1. Download the <a target="_blank" href="https://github.com/Ncleardev/NclearOS/releases/latest">NclearOS</a>
+      .iso file from GitHub.<br>
+      2. Launch VirtualBox.<br>
+      3. Proceed with steps provided on <a target="_blank"
+        href="https://www.virtualbox.org/manual/UserManual.html#create-vm-wizard">this site</a><br>
+      4. Start virtual machine.<br>
+    </div><br>
+    <button class="accordion">How to edit NclearOS source code? <br>Can I use source code in my own projects?</button>
+    <div class="panel">
+      NclearOS is completely open source - using the source code in own projects is allowed. Credit is not required,
+      especially when only a few chunks of code are used.<br>However, if your OS relies heavily on NclearOS code / is
+      just a modified version, a "Based on NclearOS" credit would be appreciated - in which case, if you also want to
+      publish your system on github, I'd recommend creating a fork.<br><br>
+      To edit the source code:<br>
+      1. Make sure Visual Studio and Cosmos are installed.<br>
+      2. Create new CosmosOS project in Visual Studio.<br>
+      3. Download <a target="_blank"
+        href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a> source code.<br>
+      
+      4. Extract files from .zip to %USERPROFILE%\source\repos\(your project name)<br>
+      5. Also remove the original Kernel.cs<br><br>
+      Final result:<br>
+      <img
+        src="https://user-images.githubusercontent.com/99822900/222854657-9348df9c-8dce-4157-982c-cf74118477c1.png"><br>
+    </div>
+  </text>
+  <br><br><a href="https://ncleardev.github.io" target="_blank">Nclear</a>
+</body>
+<style>
+  body {
+    font-family: Consolas, Lato;
+    font-size: x-large;
+    background-color: black;
+    color: #4fcd51;
+    margin: 20px;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+  text,
+  a,
+  marquee,
+  b,
+  img,
+  h5 {
+    word-wrap: break-word;
+    animation: q 2s linear;
+  }
+
+  @keyframes q {
+    0% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #k {
+    animation: o 1s linear infinite 1.5s;
+  }
+
+  #k2 {
+    position: absolute;
+    animation: o 1s linear 0.5s;
+  }
+
+  @keyframes o {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  a:link,
+  a:visited {
+    color: #4fcd51;
+    text-decoration: underline;
+    transition: 1s all;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: 0s all;
+  }
+
+  a:active {
+    color: rgb(69, 0, 255);
+    text-decoration: underline;
+    transition: 0s all;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  .accordion {
+    font-size: x-large;
+    color: #4fcd51;
+    font-family: Consolas, Lato;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: 1s all;
+  }
+
+  .active,
+  .accordion:hover {
+    color: white;
+    transition: 0s all;
+  }
+
+  .panel {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+</style>
+</html>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
