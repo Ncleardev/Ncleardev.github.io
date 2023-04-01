@@ -2,188 +2,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <meta name="Keywords" content="NclearOS"> <meta name=" Description"
-        content="Frequently asked questions about NclearOS and NclearOS2">
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="nclearos, cosmosos, cosmos os, os, operating system">
+    <meta name="Description" content="NclearOS FAQ">
     <title>NclearOS FAQ</title>
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="files/ico.png">
 </head>
 
 <body>
-    <text>
-        <a href="https://ncleardev.github.io/nclearos" style="font-size: xx-large">NclearOS</a>
-        <h1>FAQ</h1>
-
-        <button class="accordion">System Requriments for NclearOS</button>
-        <div class="panel">
-            CPU: x86<br>
-            RAM: Minimum 38 MB, Recommended 48 MB<br>
-            A bootable Pendrive / Optical Disk<br>
-            USB Keyboard (laptop built-in keyboard may not work)
-        </div><br>
-        <button class="accordion">System Requriments for NclearOS 2</button>
-        <div class="panel">
-            CPU: x86<br>
-            RAM: Minimum 128 MB, Recommended 256 MB<br>
-            Graphics: Minimum VGA, Recommended SVGA<br>
-            A bootable Pendrive / Optical Disk<br>
-            Mouse and USB Keyboard (laptop built-in keyboard may not work)
-        </div><br>
-        <button class="accordion">How to run NclearOS on VMware?</button>
-        <div class="panel">
-            1. Download the <a target="_blank" href="https://github.com/Ncleardev/NclearOS/releases/latest">NclearOS</a> or <a
-                target="_blank"
-                href="https://github.com/Ncleardev/NclearOS-2/releases/latest">NclearOS2</a>
-                 .iso file from github<br>
-            2. Launch VMware Player/Workstation.<br>
-            3. Proceed with steps provided on <a target="_blank" href="https://kb.vmware.com/s/article/1002">this
-                site</a><br>
-            4. Start virtual machine.<br>
-            If you want OS to work with files download <a target="_blank"
-                href="https://github.com/CosmosOS/Cosmos/blob/master/Build/VMWare/Workstation/Filesystem.vmdk?raw=true">.vmdk
-                file</a> and use it as a hard disk in VM options.
-        </div><br>
-        <button class="accordion">How to run NclearOS on VirtualBox?</button>
-        <div class="panel">
-            1. Download the <a target="_blank" href="https://github.com/Ncleardev/NclearOS/releases/latest">NclearOS</a> or <a
-                target="_blank"
-                href="https://github.com/Ncleardev/NclearOS-2/releases/latest">NclearOS2</a>
-                 .iso file from github<br>
-            2. Launch VirtualBox.<br>
-            3. Proceed with steps provided on <a target="_blank"
-                href="https://www.virtualbox.org/manual/UserManual.html#create-vm-wizard">this site</a><br>
-            4. Start virtual machine.<br>
-            If you want OS to work with files create new .vhd Virtual Hard Disk file using Virtual Media Manager in
-            VirtualBox. Then you need to format it using FAT32 filesystem - one way to do it is by using Windows built-in
-            Disk
-            Management: from top left corner select Action>Attach VHD. Choose VHD file created by VirtualBox. Initialize it by selecting MBR and add new simple volume.
-                Detach VHD, run VM and format new disk in NclearOS.
-        </div><br>
-        <button class="accordion">How to edit NclearOS source code? <br>Can I use source code in my own projects?</button>
-        <div class="panel">
-            NclearOS is completely open source - using the source code in own projects is allowed. Credit is not required, especially when only a few chunks of code are used.<br>However, if your OS relies heavily on NclearOS code / is just a modified version, a "Based on NclearOS" credit would be appreciated - in which case, if you also want to publish your system on github, I'd recommend creating a fork.<br><br>
-            To edit the source code:<br>
-            1. Make sure Visual Studio and Cosmos are installed.<br>
-            2. Download <a target="_blank"
-                href="https://github.com/Ncleardev/NclearOS/archive/refs/heads/main.zip">NclearOS</a> or <a
-                target="_blank"
-                href="https://github.com/Ncleardev/NclearOS-2/archive/refs/heads/main.zip">NclearOS2</a> source code.<br>
-                3. Create new CosmosOS project in Visual Studio.<br>
-                4. Extract files from .zip to %USERPROFILE%\source\repos\(your project name)<br>
-                5. Also remove the original Kernel.cs<br><br>
-                Final result for NclearOS:<br>
-                <img src="https://user-images.githubusercontent.com/99822900/222854657-9348df9c-8dce-4157-982c-cf74118477c1.png"><br>
-                Final result for NclearOS2:<br>
-                <img src="https://i.imgur.com/qVqoW1N.png">
-                <h2>Additional steps for NclearOS2 only:</h2>
-                All files located in Resources folder needs to be selected as Embedded resource<br>
-                <img src="https://i.imgur.com/ZqOQn2m.png"><br>
-                <p>Replace NclearOS2 to *your project name* in lines 96 - 142 in Kernel.cs</p><br>
-                <img src="https://i.imgur.com/CE9pa5Q.png">
-        </div>
-    </text>
+    <p>Select version</p>
+    <a href="https://ncleardev.github.io/nclearos-legacy#help" class="glow">NclearOS</a><a href="https://ncleardev.github.io/NclearOS-2/#help" class="glow">NclearOS 2</a>
 </body>
 <style>
-    .accordion {
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        font-family: Consolas, Lato;
-        font-size: xx-large;
-        color: #4fcd51;
-        transition: 1s all;
-    }
-
-    .active,
-    .accordion:hover {
-        color: white;
-        transition: 0s all;
-    }
-
-    .panel {
-        padding: 0 20px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-    }
-    
-    html{
-        overflow-x: hidden;
-    }
-
     body {
         font-family: Consolas, Lato;
         font-size: x-large;
         background-color: #004dff;
-        backdrop-filter: brightness(50%);
-        color: #4fcd51;
-        border-radius: 20px;
-        padding: 20px;
-        animation: q 1s ease;
-        transform: perspective(75em) rotateX(10deg);
-        margin: 3%;
-        max-width: 100%;
+        padding-top: 100px;
+        text-align: center;
     }
 
-    text,
-    marquee {
-        word-wrap: break-word;
-    }
-
-    h5 {
-        font-size: xx-large;
-    }
-
-    @keyframes q {
-        0% {
-            opacity: 0;
-        }
-
-        40% {
-            opacity: 0;
-            transform: perspective(75em) rotateX(30deg);
-        }
-
-        100% {
-            opacity: 1;
-            transform: perspective(75em) rotateX(10deg);
-        }
-    }
-
-    a:link,
-    a:visited {
-        color: #4fcd51;
-        text-decoration: underline;
-        transition: 1s all;
-    }
-
-    a:hover {
+    .glow:hover {
         color: white;
-        text-decoration: underline;
-        transition: 0s all;
+        text-shadow: 0 0 10px white;
+        transition: 0.4s all;
+        transform: translateY(-10px);
     }
 
-    a:active {
-        color: rgb(69, 0, 255);
-        text-decoration: underline;
-        transition: 0.1s all;
+    .glow {
+        display: inline-block;
+        width: 150px;
+        margin: 5px;
+        text-shadow: none;
+
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        padding: 20px 20px;
+        transition: 0.4s all;
+
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 </style>
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      });
-    }
-</script>
+
+</html>
