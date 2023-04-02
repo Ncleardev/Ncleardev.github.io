@@ -1,272 +1,174 @@
-body {
-  font-family: 'Open Sans Condensed';
-  background-color: #404040;
-  background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
-  background-size: 200% 100%;
-  animation: colors 10s infinite;
-}
-
 @keyframes colors {
-  0% {
+  0%, 100% {
     background-position: 0% 0%;
   }
 
   50% {
     background-position: 100% 0%;
   }
+}
 
-  100% {
-    background-position: 0% 0%;
+@keyframes welcome {
+  0%, 30% {
+    opacity: 0;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-img {
-  padding: 0;
-  display: block;
-  margin: 0 auto;
-  animation-name: welcome3;
-  animation-duration: 5s;
-}
-
-.mainimg img {
-  max-height: 100%;
-  max-width: 100%;
-  animation-name: welcome2;
-}
-
-h1,
-h3 {
-  color: white;
-  text-align: center;
-  animation: welcome3 5s linear;
-}
-
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-  transition: 0.5s all;
-}
-
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-  transition: 0.5s all;
-}
-
-a:hover {
-  color: black;
-  outline-width: 10px;
-  text-decoration: underline;
-  transition: 0.4s all;
-}
-
-a:active {
-  color: rgb(69, 0, 255);
-  background-color: transparent;
-  text-decoration: underline;
-  transition: 0.2s all;
-}
-
-.topnav {
-  position: fixed;
-  z-index: 999;
-  background-color: black;
-  overflow: hidden;
-  height: 25px;
-  width: 100%;
-  padding: 10px;
-  text-align: right;
-  opacity: 70%;
-  animation: welcome 3s linear;
-}
-
-.topnav a {
-  color: #f2f2f2;
-  padding: 15px 15px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-#time {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  right: 49%;
-}
-
-.topnav a:hover {
-  text-shadow: 0 0 70px white, 0 0 60px white, 0 0 50px white, 0 0 40px white, 0 0 30px white, 0 0 20px white, 0 0 10px white, 0 0 5px white;
-  transition: 0.4s all;
-}
-
-.topnav a:active {
-  text-shadow: none;
-  transition: 0.2s all;
-}
-
-.end a {
-  text-decoration: none;
-  text-align: right;
-  background-color: black;
-  padding-left: 17px;
-  padding-right: 17px;
-  padding-top: 5px;
-  border-radius: 50%;
-}
-
-.end {
-  bottom: 10px;
-  right: 10px;
-  margin-left: 90%;
-  position: relative;
-}
-
-.end a:hover {
-  background-color: white;
-  transition: 0.3s all;
-}
-
 @keyframes nogravity {
-  0% {
+  0%, 100% {
     top: 0px;
   }
 
   50% {
     top: 30px;
   }
-
-  100% {
-    top: 0px;
-  }
 }
 
-@keyframes welcome {
-  0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 70%;
-  }
-}
-
-@keyframes welcome2 {
-  0% {
-    opacity: 0;
-    filter: blur(20px);
-  }
-
-  10% {
-    opacity: 0;
-  }
-
-  70% {
-    opacity: 100%;
-  }
-
-  100% {
-    opacity: 100%;
-    filter: blur(0);
-  }
-}
-
-@keyframes welcome3 {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 100%;
-  }
-}
-
-marquee {
+body {
+  font-family: 'Open Sans Condensed', Arial;
+  background-color: #404040;
+  background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
+  background-size: 200% 100%;
+  animation: colors 7s infinite;
+  margin: 0;
+  overflow-x: hidden;
   color: white;
-  text-shadow: 2px 2px 2px black;
-  font-size: xx-large;
-  position: absolute;
-  animation: welcome3 5s linear;
+  text-align: center;
+  font-size: x-large;
+  text-shadow: 0 0 10px white;
 }
 
-.stuff {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: welcome3 5s;
+*:not(html, body){
+  animation: welcome 5s;
 }
 
-#glow {
-  text-shadow: 0 0 50px #fff, 0 0 30px #ffffff, 0 0 15px #ffffff, 0 0 5px;
+html {
+  scroll-behavior: smooth;
 }
 
-div.gallery {
-  border: 8px solid white;
-  border-radius: 15px;
-  transition: 0.1s all;
-  width: 45%;
-  max-width: 350px;
-  height: 420px;
-  background-color: rgba(255, 255, 255, 0.3);
-  animation-name: nogravity;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+a:link, a:visited {
+  color: white;
+  transition: 0.77s all;
+}
+
+.topnav {
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
+} 
+
+.topnav a {
+  text-decoration: none;
+  text-shadow: none;
+  font-size: 20px;
+  float: right;
+  padding: 10px 10px;
+  transition: 0.4s all;
+}
+
+.topnav a:hover{
+  text-shadow: 0 0 20px white, 0 0 10px white;
+  transition: 0.4s all;
+}
+
+.topnav a:active{
+  text-shadow: none;
+  transition: 0s all;
+}
+
+#time{
+  float: left;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+.projects{
+  animation: nogravity 5s ease infinite;
   position: relative;
 }
 
-div.gallery:hover {
-  transform: scale(105%);
+div.row{
+  display:table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.galleryL, div.galleryR {
+  float: left;
+  margin: 30px;
+  border: 8px solid white;
+  border-radius: 15px;
+  width: 350px;
+  height: 350px;
+  max-width: 70%;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.7;
+  box-shadow: 0 0 30px white;
+  transition: 0.5s ease all;
+}
+
+div.galleryL img, div.galleryR img{
+  margin-top: 20px;
+  max-width: 250px; max-height: 250px;
+  border-radius: 15px;
+}
+
+div.galleryL{
+  transform:
+  perspective(800px) rotateY(10deg) rotateX(10deg);
+}
+
+div.galleryR{
+  transform:
+    perspective(800px) rotateY(-10deg) rotateX(10deg);
+}
+
+div.galleryL:hover {
   background-color: rgba(255, 255, 255, 0.5);
-  transition: 0.1s all;
+  transform:
+    perspective(800px) rotateY(-10deg) translateY(-10px) rotateX(10deg);
+  opacity: 1;
 }
 
-div.gallery img {
-  margin: auto;
-  max-height: 300px;
-  max-width: 100%;
+div.galleryR:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform:
+    perspective(800px) rotateY(10deg) translateY(-10px) rotateX(10deg);
+  opacity: 1;
 }
 
-#img2 {
-  margin-top: 90px;
+.bigproject{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 20px;
+  background-image: url("https://raw.githubusercontent.com/Ncleardev/NclearOS-2/main/Screenshots/WallpaperNew.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.7;
+  box-shadow: 0 0 50px #004dff;
+  transition: 0.5s all;
 }
 
-#img3 {
-  width: 180px;
-  margin-top: 70px;
-}
-
-.contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.bigproject:hover{
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 0 50px white;
+  transition: 0.5s all;
 }
 
 .button {
   background: rgba(255, 255, 255, 0.2);
   padding: 10px 10px;
   border-radius: 25px;
-  transition: 0.2s all;
+  transition: 0.5s all;
   height: 50px;
   width: 50px;
   margin: 10px;
@@ -288,7 +190,34 @@ div.gallery img {
   box-shadow: 0 0px 10px #FF5700, 0 0px 20px #FF5700;
 }
 
+#yt:hover {
+  background: red;
+  box-shadow: 0 0px 10px red, 0 0px 20px red;
+}
+
 #email:hover {
   background: limegreen;
   box-shadow: 0 0px 10px limegreen, 0 0px 20px limegreen;
+}
+
+#end a {
+  text-decoration: none;
+  background-color: black;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 5px;
+  border-radius: 50%;
+}
+
+#end {
+  bottom: 10px;
+  right: 10px;
+  margin-left: 90%;
+  position: relative;
+}
+
+#end a:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s all;
 }
