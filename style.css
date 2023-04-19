@@ -1,35 +1,45 @@
 @keyframes colors {
-  0%, 100% {
-    background-position: 0% 0%;
+  0% {
+    background-position: 0% 50%;
   }
 
-  50% {
-    background-position: 100% 0%;
+  100% {
+    background-position: 100% 50%;
   }
 }
 
 @keyframes welcome {
-  0%, 30% {
+
+  0%,
+  30% {
     opacity: 0;
   }
 }
 
 @keyframes nogravity {
-  0%, 100% {
-    top: 0px;
+  0% {
+    transform: translateY(10px);
   }
 
-  50% {
-    top: 30px;
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes topnavwelcome {
+  0% {
+    transform: translateY(-50px);
   }
 }
 
 body {
-  font-family: 'Open Sans Condensed', Arial;
-  background-color: #404040;
+  font-family: 'Saira Semi Condensed';
+  background-color: rgb(100, 100, 255);
   background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
-  background-size: 200% 100%;
-  animation: colors 7s infinite;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 300% 300%;
+  animation: colors 7s ease-in-out infinite alternate;
   margin: 0;
   overflow-x: hidden;
   color: white;
@@ -38,15 +48,43 @@ body {
   text-shadow: 0 0 10px white;
 }
 
-*:not(html, body){
-  animation: welcome 5s;
+*:not(html, body) {
+  animation: welcome 2s;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-a:link, a:visited {
+h2 {
+  overflow: hidden;
+  text-align: center;
+}
+
+h2:before,
+h2:after {
+  background-color: white;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  box-shadow: white 0px 0px 7px;
+}
+
+h2:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+h2:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+a:link,
+a:visited {
   color: white;
   transition: 0.77s all;
 }
@@ -58,7 +96,8 @@ a:link, a:visited {
   width: 100%;
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.3);
-} 
+  animation: topnavwelcome 2s ease-in-out;
+}
 
 .topnav a {
   text-decoration: none;
@@ -69,61 +108,61 @@ a:link, a:visited {
   transition: 0.4s all;
 }
 
-.topnav a:hover{
+.topnav a:hover {
   text-shadow: 0 0 20px white, 0 0 10px white;
   transition: 0.4s all;
 }
 
-.topnav a:active{
+.topnav a:active {
   text-shadow: none;
   transition: 0s all;
 }
 
-#time{
+#time {
   float: left;
   font-size: 20px;
   padding: 10px 10px;
 }
 
-.projects{
-  animation: nogravity 5s ease infinite;
-  position: relative;
+.projects {
+  animation: nogravity 3s ease-in-out infinite alternate;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-div.row{
-  display:table;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.galleryL, div.galleryR {
-  float: left;
+div.galleryL,
+div.galleryR {
   margin: 30px;
+  padding-bottom: 50px;
   border: 8px solid white;
   border-radius: 15px;
   width: 350px;
   height: 350px;
-  max-width: 70%;
+  max-width: 80%;
   background-color: rgba(255, 255, 255, 0.3);
   opacity: 0.7;
   box-shadow: 0 0 30px white;
   transition: 0.5s ease all;
 }
 
-div.galleryL img, div.galleryR img{
+div.galleryL img,
+div.galleryR img {
   margin-top: 20px;
-  max-width: 250px; max-height: 250px;
+  max-width: 250px;
+  max-height: 250px;
   border-radius: 15px;
 }
 
-div.galleryL{
+div.galleryL {
   transform:
-  perspective(800px) rotateY(10deg) rotateX(10deg);
+    perspective(800px) rotateY(10deg);
 }
 
-div.galleryR{
+div.galleryR {
   transform:
-    perspective(800px) rotateY(-10deg) rotateX(10deg);
+    perspective(800px) rotateY(-10deg);
 }
 
 div.galleryL:hover {
@@ -140,7 +179,7 @@ div.galleryR:hover {
   opacity: 1;
 }
 
-.bigproject{
+.bigproject {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -157,7 +196,7 @@ div.galleryR:hover {
   transition: 0.5s all;
 }
 
-.bigproject:hover{
+.bigproject:hover {
   transform: scale(1.05);
   opacity: 1;
   box-shadow: 0 0 50px white;
@@ -200,24 +239,21 @@ div.galleryR:hover {
   box-shadow: 0 0px 10px limegreen, 0 0px 20px limegreen;
 }
 
-#end a {
+#end {
   text-decoration: none;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  rotate: 270deg;
+  font-size: xx-large;
   padding-left: 17px;
   padding-right: 17px;
-  padding-top: 5px;
-  border-radius: 50%;
+  padding-bottom: 5px;
+  float: right;
+  margin: 20px;
 }
 
-#end {
-  bottom: 10px;
-  right: 10px;
-  margin-left: 90%;
-  position: relative;
-}
-
-#end a:hover {
-  background-color: white;
+#end:hover {
+  background-color: rgba(255, 255, 255, 0.7);
   color: black;
   transition: 0.3s all;
 }
