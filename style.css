@@ -39,7 +39,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 300% 300%;
-  animation: colors 7s ease-in-out infinite alternate;
+  animation: colors 5s ease-in-out infinite alternate;
   margin: 0;
   overflow-x: hidden;
   color: white;
