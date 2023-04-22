@@ -41,14 +41,10 @@ body {
   background-size: 300% 300%;
   animation: colors 7s ease-in-out infinite alternate;
   margin: 0;
-  overflow-x: hidden;
   color: white;
   text-align: center;
   font-size: x-large;
   text-shadow: 0 0 10px white;
-}
-
-*:not(html, body) {
   animation: welcome 2s;
 }
 
@@ -71,7 +67,6 @@ a {
 
 h2 {
   overflow: hidden;
-  text-align: center;
 }
 
 h2:before,
@@ -99,13 +94,11 @@ h2:after {
 a:link,
 a:visited {
   color: white;
-  transition: 0.77s all;
 }
 
 .topnav {
   position: fixed;
   z-index: 999;
-  overflow: hidden;
   width: 100%;
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.3);
@@ -126,7 +119,7 @@ a:visited {
 }
 
 .topnav a:active {
-  text-shadow: none;
+  opacity: 0.3;
   transition: 0s all;
 }
 
@@ -138,7 +131,6 @@ a:visited {
 
 .projects {
   animation: nogravity 3s ease-in-out infinite alternate;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -146,7 +138,7 @@ a:visited {
 
 div.galleryL,
 div.galleryR {
-  margin: 30px;
+  margin: 5%;
   padding-bottom: 50px;
   border: 8px solid white;
   border-radius: 15px;
@@ -216,6 +208,7 @@ div.galleryR:hover {
 }
 
 .button {
+  display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   padding: 10px 10px;
   border-radius: 25px;
@@ -224,6 +217,11 @@ div.galleryR:hover {
   width: 50px;
   margin: 10px;
   cursor: pointer;
+}
+
+.button img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #dc:hover {
@@ -261,6 +259,7 @@ div.galleryR:hover {
   padding-bottom: 5px;
   float: right;
   margin: 20px;
+  transition: 0.3s all;
 }
 
 #end:hover {

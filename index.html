@@ -25,9 +25,9 @@
   <marquee scrollamount="10" style="position: absolute; top:150px; font-size: xx-large; z-index: 1;">Welcome to my
     website!
   </marquee>
-  <img src="files/image.png" style="width: 100%;" id="top">
+  <img src="files/image.png" style="width: 100%;" id="top" alt="Welcome Image">
   <h2 id="about">My Projects</h2>
-  <a href="nclearos" target="_blank" style="text-decoration: none;">
+  <a href="nclearos" target="_blank">
     <div class="bigproject">
       <h3 style="top:110px; position: relative;">Nclear Operating System</h3>
     </div>
@@ -35,44 +35,41 @@
   <div class="projects">
     <a target="_blank" href="https://www.beamng.com/resources/rally-island.20402">
       <div class="galleryR">
-        <img src="files/map.png">
+        <img src="files/map.png" alt="Screenshot of a map">
         <h3>BeamNG.drive Rally Island Map</h3>
       </div>
     </a>
     <a target="_blank" href="https://play.google.com/store/apps/dev?id=8464771456666865778">
       <div class="galleryR">
         <img
-          src="https://play-lh.googleusercontent.com/wo4pKFEiUYCITES25vUS4b6pr-7A6-MGavL-AHlY6UNqvsw2JmffBNP7Kyy6Tz0CrEab=w1536-h746-rw">
+          src="https://play-lh.googleusercontent.com/wo4pKFEiUYCITES25vUS4b6pr-7A6-MGavL-AHlY6UNqvsw2JmffBNP7Kyy6Tz0CrEab=w1536-h746-rw" alt="Screenshot of Android app">
         <h3>Android apps</h3>
       </div>
     </a>
     <a target="_blank" href="shadownote">
       <div class="galleryL">
-        <img src="https://ncleardev.github.io/shadownote/ico.png">
+        <img src="https://ncleardev.github.io/shadownote/ico.png" alt="ShadowNote Icon">
         <h3>ShadowNote - take notes quickly</h3>
       </div>
     </a>
     <a target="_blank" href="ChickenBot">
       <div class="galleryL">
         <img
-          src="https://cdn.discordapp.com/app-icons/871123003134595154/57fcc4501ff1385160ce26a1f6c9cd33.png?size=256">
+          src="https://cdn.discordapp.com/app-icons/871123003134595154/57fcc4501ff1385160ce26a1f6c9cd33.png?size=256" alt="ChickenBot icon">
         <h3>Chickenbot - bot for Discord</h3>
       </div>
     </a>
   </div>
   <h2 style="margin-top: 100px;">Links</h2>
   <div id="contact">
-    <a href="#contact" onclick="msg()" aria-label="Discord"><img id='dc' src="files/discord.png" class="button"></a>
-    <a href="https://github.com/Ncleardev" target="_blank" aria-label="GitHub"><img id='github' src="files/github.png"
-        class="button"></a>
-    <a href="https://reddit.com/u/wojtas0_" target="_blank" aria-label="Reddit"><img id='reddit' class="button"
-        src="files/reddit.png"></a>
-    <a href="https://youtube.com/@ncleardev" target="_blank" aria-label="YouTube"><img id='yt' class="button"
-        src="files/yt.png"></a>
-    <a href="#contact" onclick="msg2()" aria-label="Email"><img id='email' class="button" src="files/email.png"></a>
+    <a class="button" id='dc' href="#contact" onclick="msg()" aria-label="Discord"><img src="files/discord.png" alt="Discord icon"></a>
+    <a class="button" id='github' href="https://github.com/Ncleardev" target="_blank" aria-label="GitHub"><img src="files/github.png" alt="GitHub icon"></a>
+    <a class="button" id='reddit' href="https://reddit.com/u/wojtas0_" target="_blank" aria-label="Reddit"><img src="files/reddit.png" alt="Reddit icon"></a>
+    <a class="button" id='yt' href="https://youtube.com/@ncleardev" target="_blank" aria-label="YouTube"><img src="files/yt.png" alt="YouTube icon"></a>
+    <a class="button" id='email' href="#contact" onclick="msg2()" aria-label="Email"><img src="files/email.png" alt="Email icon"></a>
   </div>
   <div class="line"></div>
-  <div style="text-align: center;">
+  <div>
     <a href="https://hits.seeyoufarm.com" target="_blank">
       <img
         style="border: 5px solid rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); border-radius: 10px; opacity: 0.7;"
@@ -80,7 +77,6 @@
         alt="Visitors today / total">
     </a>
   </div>
-
   <a href="#top" aria-label="Scroll to top" id="end">></a>
 </body>
 
