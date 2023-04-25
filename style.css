@@ -252,7 +252,7 @@ div.galleryR:hover {
 #end {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
-  rotate: 270deg;
+  transform: rotate(270deg);
   font-size: xx-large;
   padding-left: 17px;
   padding-right: 17px;
