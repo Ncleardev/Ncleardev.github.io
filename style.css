@@ -32,6 +32,10 @@
   }
 }
 
+* :not(body) {
+  animation: welcome 2s;
+}
+
 body {
   font-family: 'Saira Semi Condensed';
   background-color: rgb(100, 100, 255);
@@ -45,7 +49,6 @@ body {
   text-align: center;
   font-size: x-large;
   text-shadow: 0 0 10px white;
-  animation: welcome 2s;
 }
 
 html {
