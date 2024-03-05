@@ -1,119 +1,135 @@
-@keyframes colors {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes welcome {
-
-  0%,
-  30% {
-    opacity: 0;
-  }
+  0%, 30% { opacity: 0; }
 }
 
 @keyframes nogravity {
-  0% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(50px);
-  }
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(50px); }
 }
 
 @keyframes topnavwelcome {
-  0% {
-    transform: translateY(-50px);
-  }
+  0%, 30% { transform: translateY(100px); opacity: 0; }
 }
 
-* :not(body) {
-  animation: welcome 2s;
+@keyframes linesAnim { 
+  0%, 20% { transform: translateX(-100%); }
+}
+
+@keyframes linesAnim2 { 
+  0%, 20% { transform: translateX(100%); }
 }
 
 body {
   font-family: 'Saira Semi Condensed';
-  background-color: rgb(100, 100, 255);
-  background: linear-gradient(45deg, yellow, rgb(255, 100, 100), rgb(100, 100, 255), lime);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 300% 300%;
-  animation: colors 7s ease-in-out infinite alternate;
   margin: 0;
   color: white;
   text-align: center;
   font-size: x-large;
   text-shadow: 0 0 10px white;
+  animation: welcome 2s;
 }
 
 html {
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(225deg, #04242f, black);
+  background-attachment: fixed;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
+.main {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.line {
-  margin-top: 50px;
-  margin-bottom: 30px;
+#mainImg {
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 50%;
+}
+
+.lines-container {
+  position: sticky;
+  top: 0;
+  margin: 0px;
+  padding: 0px;
   width: 100%;
-  height: 3px;
-  background-color: white;
-  box-shadow: white 0px 0px 7px;
-}
-
-h2 {
+  height: calc(100vh - 80px);
+  z-index: -10;
   overflow: hidden;
 }
 
-h2:before,
-h2:after {
-  background-color: white;
+.lines-container ul {
+  position: absolute;
+  height: 100vh;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  --mask: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x;
+  mask: var(--mask);
+}
+
+.lines {
+  rotate: -40deg;
+  background-color: rgba(255, 255, 0, 0.5);
+  width: 200vw;
+  transform:  translateY(-63vw);
+  height: calc(1vw + 1vh);
+  margin-top: calc(2vw + 2vh);
+}
+
+.topnav a::before {
   content: "";
-  display: inline-block;
+  position: absolute;
+  display: block;
+  width: 100%;
   height: 3px;
-  position: relative;
-  vertical-align: middle;
-  width: 50%;
-  box-shadow: white 0px 0px 7px;
+  bottom: 3px;
+  left: 0;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transition: 0.3s ease all;
 }
 
-h2:before {
-  right: 0.5em;
-  margin-left: -50%;
+.topnav a:hover::before {
+  transform: scaleX(1);
 }
 
-h2:after {
-  left: 0.5em;
-  margin-right: -50%;
-}
-
-a:link,
-a:visited {
-  color: white;
+.topnav a:active::before {
+  opacity: 0.5;
+  height: 100%;
+  transition: 0.1s ease all;
 }
 
 .topnav {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
   z-index: 999;
   width: 100%;
   backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.3);
-  animation: topnavwelcome 2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: topnavwelcome 2s ease;
+  text-align: right;
 }
 
-.topnav a {
+.topnav a, text {
+  display: inline-block;
   text-shadow: none;
-  font-size: 20px;
-  float: right;
-  padding: 10px 10px;
-  transition: 0.4s all;
+  font-size: xx-large;
+  padding: 15px 15px;
+  transition: 0.4s all ease;
+}
+
+.topnav text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  opacity: 0; filter: blur(10px); transition: 0.5s all ease;
+  padding-top: 15px;
 }
 
 .topnav a:hover {
@@ -121,15 +137,25 @@ a:visited {
   transition: 0.4s all;
 }
 
-.topnav a:active {
-  opacity: 0.3;
-  transition: 0s all;
+@media only screen and (max-width: 600px) {
+  .topnav a, text {
+    font-size: x-large;
+    padding: 10px 10px;
+  }
+  .topnav text {
+    padding-top: 10px;
+    left: 2em;
+  }
 }
 
-#time {
-  float: left;
-  font-size: 20px;
-  padding: 10px 10px;
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: white;
 }
 
 .projects {
@@ -151,7 +177,8 @@ div.galleryR {
   background-color: rgba(255, 255, 255, 0.3);
   opacity: 0.7;
   box-shadow: 0 0 30px white;
-  transition: 0.5s ease all;
+  position: relative;
+  transition: 0.3s all ease;
 }
 
 div.galleryL img,
@@ -162,52 +189,14 @@ div.galleryR img {
   border-radius: 15px;
 }
 
-div.galleryL {
-  transform:
-    perspective(800px) rotateY(10deg);
-}
-
-div.galleryR {
-  transform:
-    perspective(800px) rotateY(-10deg);
-}
-
 div.galleryL:hover {
   background-color: rgba(255, 255, 255, 0.5);
-  transform:
-    perspective(800px) rotateY(-10deg) translateY(-10px) rotateX(10deg);
   opacity: 1;
 }
 
 div.galleryR:hover {
   background-color: rgba(255, 255, 255, 0.5);
-  transform:
-    perspective(800px) rotateY(10deg) translateY(-10px) rotateX(10deg);
   opacity: 1;
-}
-
-.bigproject {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 200px;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 20px;
-  background-image: url("https://raw.githubusercontent.com/Ncleardev/NclearOS-2/main/Screenshots/WallpaperNew.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  opacity: 0.7;
-  box-shadow: 0 0 50px #004dff;
-  transition: 0.5s all;
-}
-
-.bigproject:hover {
-  transform: scale(1.05);
-  opacity: 1;
-  box-shadow: 0 0 50px white;
-  transition: 0.5s all;
 }
 
 .button {
@@ -253,20 +242,63 @@ div.galleryR:hover {
 }
 
 #end {
-  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
   border-radius: 50%;
   transform: rotate(270deg);
-  font-size: xx-large;
-  padding-left: 17px;
-  padding-right: 17px;
-  padding-bottom: 5px;
-  float: right;
-  margin: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
   transition: 0.3s all;
+  z-index: 900;
 }
 
 #end:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  color: black;
+  background-color: white;
+  box-shadow: white 0 0 10px, white 0 0 20px;
   transition: 0.3s all;
+}
+
+#end:active {
+  scale: 0.7;
+}
+
+.line {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  box-shadow: white 0px 0px 7px;
+}
+
+h2 {
+  overflow: hidden;
+}
+
+h2:before,
+h2:after {
+  background-color: white;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  box-shadow: white 0px 0px 7px;
+}
+
+h2:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+h2:after {
+  left: 0.5em;
+  margin-right: -50%;
 }

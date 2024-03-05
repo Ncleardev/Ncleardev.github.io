@@ -13,71 +13,102 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
 </head>
 
-<body onload="Time()">
+<body onload="load();" id="top">
+
+  <div class="lines-container">
+    <ul>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines" style="margin-bottom: calc(25vw + 25vh);"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+      <li class="lines"></li>
+    </ul>
+    <img src="files/image.png" alt="Welcome Image" id="mainImg">
+  </div>
+
   <div class="topnav">
-    <a href="#contact">Links</a>
+    <text id="smallTitle">Nclear</text>
     <a href="#about">Projects</a>
-    <text id="time"></text>
-    <script src="script.js"></script>
+    <a href="#contact">Links</a>
   </div>
-  <marquee scrollamount="10" style="position: absolute; top:150px; font-size: xx-large; z-index: 1;">Welcome to my
-    website!
-  </marquee>
-  <img src="files/image.png" style="width: 100%;" id="top" alt="Welcome Image">
-  <h2 id="about">My Projects</h2>
-  <a href="nclearos" target="_blank">
-    <div class="bigproject">
-      <h3 style="top:110px; position: relative;">Nclear Operating System</h3>
+
+  <div class="main" id="about">
+    <h2 style="margin-top: 0; padding-top: 70px">My Projects</h2>
+    <div class="projects">
+
+      <a target="_blank" href="https://www.beamng.com/resources/authors/wojtas0.389689/">
+        <div class="galleryR">
+          <img src="files/map.png" alt="Screenshot of a map">
+          <h3>BeamNG.drive mods</h3>
+        </div>
+      </a>
+
+      <a target="_blank" href="nclearos">
+        <div class="galleryL">
+          <img src="files/nclearos.png" alt="NclearOS Logo">
+          <h3>Nclear Operating System</h3>
+        </div>
+      </a>
+
+      <a target="_blank" href="https://play.google.com/store/apps/dev?id=8464771456666865778">
+        <div class="galleryR">
+          <img
+            src="https://play-lh.googleusercontent.com/xSOcTNut0Zr00PHYrnPK1bDP0iLEf_8NTELCdvY75n5IeMDHAASGHwQl8j7OEsTLN1p5"
+            alt="Screenshot of Android app">
+          <h3>Android apps</h3>
+        </div>
+      </a>
+
+      <a target="_blank" href="shadownote">
+        <div class="galleryL">
+          <img src="https://ncleardev.github.io/shadownote/ico.png" alt="ShadowNote Icon">
+          <h3>ShadowNote - take notes quickly</h3>
+        </div>
+      </a>
     </div>
-  </a>
-  <div class="projects">
-    <a target="_blank" href="https://www.beamng.com/resources/rally-island.20402">
-      <div class="galleryR">
-        <img src="files/map.png" alt="Screenshot of a map">
-        <h3>BeamNG.drive Rally Island Map</h3>
-      </div>
-    </a>
-    <a target="_blank" href="https://play.google.com/store/apps/dev?id=8464771456666865778">
-      <div class="galleryR">
+    <h2 style="margin-top: 100px;">Links</h2>
+    <div id="contact">
+      <a class="button" id='dc' href="#contact" onclick="msg()" aria-label="Discord"><img src="files/discord.png"
+          alt="Discord icon"></a>
+      <a class="button" id='github' href="https://github.com/Ncleardev" target="_blank" aria-label="GitHub"><img
+          src="files/github.png" alt="GitHub icon"></a>
+      <a class="button" id='reddit' href="https://reddit.com/u/wojtas0_" target="_blank" aria-label="Reddit"><img
+          src="files/reddit.png" alt="Reddit icon"></a>
+      <a class="button" id='yt' href="https://youtube.com/@ncleardev" target="_blank" aria-label="YouTube"><img
+          src="files/yt.png" alt="YouTube icon"></a>
+      <a class="button" id='email' href="#contact" onclick="msg2()" aria-label="Email"><img src="files/email.png"
+          alt="Email icon"></a>
+    </div>
+    <div class="line"></div>
+    <div>
+      <a href="https://hits.seeyoufarm.com" target="_blank">
         <img
-          src="https://play-lh.googleusercontent.com/xSOcTNut0Zr00PHYrnPK1bDP0iLEf_8NTELCdvY75n5IeMDHAASGHwQl8j7OEsTLN1p5" alt="Screenshot of Android app">
-        <h3>Android apps</h3>
-      </div>
-    </a>
-    <a target="_blank" href="shadownote">
-      <div class="galleryL">
-        <img src="https://ncleardev.github.io/shadownote/ico.png" alt="ShadowNote Icon">
-        <h3>ShadowNote - take notes quickly</h3>
-      </div>
-    </a>
-    <a target="_blank" href="ChickenBot">
-      <div class="galleryL">
-        <img
-          src="https://cdn.discordapp.com/app-icons/871123003134595154/57fcc4501ff1385160ce26a1f6c9cd33.png?size=256" alt="ChickenBot icon">
-        <h3>Chickenbot - bot for Discord</h3>
-      </div>
-    </a>
+          style="border: 5px solid rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); border-radius: 10px; opacity: 0.7;"
+          src="https://h2ts.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fncleardev.github.io&amp;count_bg=%232979FF&amp;title_bg=%23000000&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=Visitors+today+%2F+total&amp;edge_flat=true"
+          alt="Visitors today / total">
+      </a>
+    </div>
+    <div style="height: 100px;"></div>
+    <a href="#top" aria-label="Scroll to top" id="end">></a>
   </div>
-  <h2 style="margin-top: 100px;">Links</h2>
-  <div id="contact">
-    <a class="button" id='dc' href="#contact" onclick="msg()" aria-label="Discord"><img src="files/discord.png" alt="Discord icon"></a>
-    <a class="button" id='github' href="https://github.com/Ncleardev" target="_blank" aria-label="GitHub"><img src="files/github.png" alt="GitHub icon"></a>
-    <a class="button" id='reddit' href="https://reddit.com/u/wojtas0_" target="_blank" aria-label="Reddit"><img src="files/reddit.png" alt="Reddit icon"></a>
-    <a class="button" id='yt' href="https://youtube.com/@ncleardev" target="_blank" aria-label="YouTube"><img src="files/yt.png" alt="YouTube icon"></a>
-    <a class="button" id='email' href="#contact" onclick="msg2()" aria-label="Email"><img src="files/email.png" alt="Email icon"></a>
-  </div>
-  <div class="line"></div>
-  <div>
-    <a href="https://hits.seeyoufarm.com" target="_blank">
-      <img
-        style="border: 5px solid rgba(255, 255, 255, 0.5); box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); border-radius: 10px; opacity: 0.7;"
-        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fncleardev.github.io&amp;count_bg=%232979FF&amp;title_bg=%23000000&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=Visitors+today+%2F+total&amp;edge_flat=true"
-        alt="Visitors today / total">
-    </a>
-  </div>
-  <a href="#top" aria-label="Scroll to top" id="end">></a>
 </body>
 
 </html>
