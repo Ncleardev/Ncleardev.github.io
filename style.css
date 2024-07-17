@@ -204,7 +204,7 @@ div.galleryR:hover {
   background: rgba(255, 255, 255, 0.2);
   padding: 10px 10px;
   border-radius: 25px;
-  transition: 0.5s all;
+  transition: 0.25s all;
   height: 50px;
   width: 50px;
   margin: 10px;
