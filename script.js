@@ -6,8 +6,8 @@ function msg() {
 }
 
 function msg2() {
-  if (confirm("Email: xyz.games.apps@gmail.com\nPress OK to create email draft")) {
-    window.open('mailto:xyz.games.apps@gmail.com', '_blank').focus();
+  if (confirm("Email: nclear.project@gmail.com\nPress OK to create email draft")) {
+    window.open('mailto:nclear.project@gmail.com', '_blank').focus();
   } else {
   }
 }
