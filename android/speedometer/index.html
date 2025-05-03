@@ -54,7 +54,7 @@
     </section>
 
     <section>
-      <h2>Release notes</h2>
+      <h2><br><br>Release notes</h2>
       <hr>
       <b>May 2025</b>
       <h2 style="margin: 0;">Version 1.9.2 - Upcoming release (final testing phase)</h2>
@@ -200,15 +200,18 @@
     </section>
 
     <section>
-      <h2>Additional information</h2>
+      <h2><br><br>Additional information</h2>
       <a href="privacy-policy" target="_blank">Privacy Policy</a>
       <div style="margin-bottom: 0.5em;"></div>
       <a href="terms-of-service" target="_blank">Terms of Service</a>
     </section>
   </main>
+
   <footer>
     <p style="font-size: x-small;">Google Play and the Google Play logo are trademarks of Google LLC.</p>
   </footer>
+
+  <div id="toTop"></div>
 </body>
 
 <style>
@@ -232,7 +235,7 @@
     background-color: #212121;
     color: #f0f0f0;
     transform-origin: top center;
-    animation: welcome 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: welcome 2s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   html {
@@ -300,6 +303,53 @@
     text-decoration: underline;
     color: rgb(100, 172, 255)
   }
+
+  #toTop {
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(90px);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s linear, box-shadow 0.5s linear;
+    background-image: url('top.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #toTop:active {
+    background-color: white;
+    box-shadow: white 0 0 10px, white 0 0 20px;
+    transition: 0s all;
+  }
+
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toTop = document.getElementById('toTop');
+    toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    toTop.style.display = "block";
+    let b = false;
+
+    document.onscroll = function () {
+      if ((window.scrollY > window.innerHeight / 2) !== b) {
+        b = !b;
+        toTop.style.opacity = b ? 1 : 0;
+        toTop.style.transform = b ? "translateY(0)" : "translateY(90px)";
+        toTop.style.pointerEvents = b ? "auto" : "none";
+        document.activeElement = null
+      }
+    };
+  });
+</script>
 
 </html>
