@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GPS Speedometer Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="speedometer, gps speedometer, gps speedometer premium">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="description" content="Accurate, ad-free GPS speedometer for Android—simple, straightforward, and feature-packed.">
+  <meta name="author" content="Ncleardev">
+  <link rel="icon" href="ico.png">
+  <meta name="color-scheme" content="dark light">
+</head>
+
+<body>
+  <header>
+    <div id="img1">
+      <div id="img2"></div>
+    </div>
+    <h1>GPS Speedometer Premium<text id="acc">_</text></h1>
+    <p>Accurate, ad-free GPS speedometer — simple, straightforward, and feature-packed.</p>
+    <h2><a href="https://ncleardev.github.io/android/speedometer/">Back to main website</a></h2>
+  </header>
+
+  <main>
+    <section>
+      <h2>Frequently Asked Questions:</h2>
+      <div class="center" id="help">
+        <text>
+          <a class="accordion">GPS speed differs from that indicated by the vehicle's speedometer.</a>
+          <div class="panel">
+            Vehicle speedometers are typically designed to slightly overestimate speed as a safety measure and to comply with regulations that prohibit them from underreporting. This ensures drivers are not unintentionally speeding. In contrast, GPS devices calculate speed based on satellite data, offering a more precise and unbiased measurement. Variations can also result from factors like tire size, pressure, or wear affecting the vehicle's calibration.
+          </div>
+          <a class="accordion">The speed never shows up, but the location appears in other apps.</a>
+          <div class="panel">
+            GPS Speedometer Premium relies solely on the GPS sensor to provide accurate speed readings.
+Other apps may show your location using Wi-Fi or mobile networks, which are helpful for faster location initialization and indoor positioning — especially when GPS signals are blocked by ceilings or buildings. However, this network-based data lacks the precision needed to calculate speed accurately. To ensure reliable results, speed is only displayed when a strong GPS signal is available.
+More information is available at <a target="_blank" href="https://www.gps.gov/systems/gps/performance/accuracy/">https://www.gps.gov/systems/gps/performance/accuracy/</a>
+          </div>
+          <a class="accordion">Why is the speed inaccurate? / How accurate is GPS for speed measurement?</a>
+          <div class="panel">
+            More information is available at <a target="_blank" href="https://www.gps.gov/systems/gps/performance/accuracy/">https://www.gps.gov/systems/gps/performance/accuracy/</a>
+          </div>
+          <a class="accordion">The speed appears delayed.</a>
+          <div class="panel">
+            GPS updates your location roughly every one second. A current location alone is not sufficient for measuring the speed. However, by using the formula:<br><text style="font-family: monospace;">speed = distance / time<br>
+              Distance: The GPS calculates the distance between the current location (newest position) and the previous location (from 1 second ago)<br>
+              Time: The time interval between these two location updates is usually 1 second, but can occasionally take longer if GPS signal is lost, which is taken into account              
+            </text><br>
+            it's possible to calculate it. This means the speed displayed is not the instantaneous speed at the exact moment but rather the average speed over the previous second. Additionally, the GPS signal must travel between satellites and the device, which increases the delay even further.
+            <br><br>Also please note that enabling Smoother speed changes in the Advanced section adds further delay.            
+          </div>
+        </text>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding-bottom: 100px;">
+    If you've got any other questions:
+    <br>• Check if there isn't help available directly in the app by clicking the question icon next to the option.
+    <br>• Feel free to write an email at <a href="mailto:nclear.project@gmail.com" target="_blank" style="line-break: auto;">nclear.project@gmail.com</a>
+  </footer>
+
+  <div id="toTop"></div>
+</body>
+
+<style>
+  @keyframes welcome {
+
+    0%,
+    10% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family: Lato, Arial, sans-serif;
+    background-color: #212121;
+    color: #f0f0f0;
+    transform-origin: top center;
+    animation: welcome 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  html {
+    background-color: #111111;
+  }
+
+  header,
+  footer {
+    text-align: center;
+    padding: 2em;
+    background-color: #111111;
+  }
+
+  main {
+    padding: 1em 2em;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.5em;
+  }
+
+  b {
+    color: #a0a0a0;
+  }
+
+  @keyframes pointer {
+    50% {
+      rotate: 270deg;
+    }
+
+    100% {
+      rotate: 0deg;
+    }
+  }
+
+  #img1 {
+    background-image: url('img_1.webp');
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #img2 {
+    background-image: url('img_2.webp');
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+    animation: pointer 2s ease-in-out 0.5s;
+  }
+
+  @keyframes acc {
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #acc {
+    animation: acc 1s infinite ease-out;
+  }
+
+  a:any-link {
+    line-break: anywhere;
+    text-decoration: underline;
+    color: rgb(100, 172, 255)
+  }
+
+  #toTop {
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(90px);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s linear, box-shadow 0.5s linear;
+    background-image: url('top.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #toTop:active {
+    background-color: white;
+    box-shadow: white 0 0 10px, white 0 0 20px;
+    transition: 0s all;
+  }
+
+  .accordion {
+    cursor: pointer;
+    font-size: large;
+    transition: 1s all;
+  }
+
+  .active {
+    color: rgb(100, 172, 255);
+    transition: 0s all;
+  }
+
+  .panel {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toTop = document.getElementById('toTop');
+    toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    toTop.style.display = "block";
+    let b = false;
+
+    document.onscroll = function () {
+      if ((window.scrollY > window.innerHeight / 2) !== b) {
+        b = !b;
+        toTop.style.opacity = b ? 1 : 0;
+        toTop.style.transform = b ? "translateY(0)" : "translateY(90px)";
+        toTop.style.pointerEvents = b ? "auto" : "none";
+      }
+    };
+  });
+
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      for (let j = 0; j < acc.length; j++) {
+        if (acc[j] !== this) {
+          acc[j].classList.remove("active");
+          acc[j].nextElementSibling.style.maxHeight = null;
+        }
+      }
+
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+
+      const y = this.getBoundingClientRect().top + window.scrollY;
+      setTimeout(() => window.scroll({ top: y, behavior: 'smooth' }), 100);
+    });
+  }
+</script>
+
+</html>
