@@ -24,6 +24,7 @@
   </header>
 
   <main>
+    <div id="google_translate_element" style="min-height: 24px;"></div>
     <section>
       <h2>Frequently Asked Questions:</h2>
       <div class="center" id="help">
@@ -245,6 +246,16 @@ More information is available at <a target="_blank" href="https://www.gps.gov/sy
       setTimeout(() => window.scroll({ top: y, behavior: 'smooth' }), 100);
     });
   }
-</script>
 
+
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'ar,cs,de,el,es,fr,hi,hr,hu,id,it,ja,ms,pl,pt,ro,ru,sk,sl,th,tr,uk,uz,vi,zh',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>
