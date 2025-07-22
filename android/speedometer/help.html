@@ -52,6 +52,11 @@ More information is available at <a target="_blank" href="https://www.gps.gov/sy
             it's possible to calculate it. This means the speed displayed is not the instantaneous speed at the exact moment but rather the average speed over the previous second. Additionally, the GPS signal must travel between satellites and the device, which increases the delay even further.
             <br><br>Also please note that enabling Smoother speed changes in the Advanced section adds further delay.            
           </div>
+          <a class="accordion">Is the app compatible with Android Auto?</a>
+          <div class="panel">
+              GPS Speedometer Premium is not compatible with Android Auto. Currently, Google only allows specific categories of apps—such as navigation, media, and messaging—to be integrated with Android Auto. Speedometer apps do not fall within the supported categories and are therefore not eligible for Android Auto compatibility.
+              <br><br>While it's technically possible to adapt the app for Android Auto, the strict rules and limitations would demand significant changes to its design and functionality. Ultimately, it would need to operate much like a full navigation app—displaying a fullscreen map with only a small speed indicator—which goes against the main purpose of the app.
+          </div>
         </text>
       </div>
     </section>
@@ -245,8 +250,8 @@ More information is available at <a target="_blank" href="https://www.gps.gov/sy
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
 
-      const y = this.getBoundingClientRect().top + window.scrollY;
-      setTimeout(() => window.scroll({ top: y, behavior: 'smooth' }), 100);
+      //const y = this.getBoundingClientRect().top + window.scrollY;
+      //setTimeout(() => window.scroll({ top: y, behavior: 'smooth' }), 100);
     });
   }
 
