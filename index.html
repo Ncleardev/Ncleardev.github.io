@@ -11,15 +11,16 @@
   <meta name="author" content="Nclear">
   <link href="style.css" rel="stylesheet">
   <link rel="icon" href="files/ico.png">
+  <meta name="color-scheme" content="dark light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300&display=swap" rel="stylesheet">
   <script src="script.js"></script>
 </head>
 
-<body onload="load();" id="top">
-
-  <div class="lines-container">
+<body onload="load();">
+<div class="main-wrapper">
+  <div class="lines-container" >
     <ul>
       <li class="lines"></li>
       <li class="lines"></li>
@@ -45,6 +46,8 @@
     <img src="files/image.png" alt="Welcome Image" id="mainImg">
   </div>
 
+  <div id="top"></div>
+
   <div class="topnav">
     <text id="smallTitle">Nclear</text>
     <a href="#about">Projects</a>
@@ -56,36 +59,25 @@
     <div class="projects">
 
       <a target="_blank" href="https://www.beamng.com/resources/authors/wojtas0.389689/">
-        <div class="galleryR">
-          <img src="files/map.png" alt="Screenshot of a map">
-          <h3>BeamNG.drive mods</h3>
-        </div>
+        <img src="files/map.webp" alt="Screenshot of a map">
+        <h3>BeamNG.drive mods</h3>
       </a>
 
       <a target="_blank" href="nclearos">
-        <div class="galleryL">
-          <img src="files/nclearos.png" alt="NclearOS Logo">
-          <h3>Nclear Operating System</h3>
-        </div>
+        <img src="https://raw.githubusercontent.com/Ncleardev/NclearOS-2/main/Screenshots/WallpaperNew.png" alt="NclearOS Logo">
+        <h3>Nclear Operating System</h3>
       </a>
 
       <a target="_blank" href="https://play.google.com/store/apps/dev?id=8464771456666865778">
-        <div class="galleryR">
-          <img
-            src="https://play-lh.googleusercontent.com/xSOcTNut0Zr00PHYrnPK1bDP0iLEf_8NTELCdvY75n5IeMDHAASGHwQl8j7OEsTLN1p5"
-            alt="Screenshot of Android app">
-          <h3>Android apps</h3>
-        </div>
-      </a>
-
-      <a target="_blank" href="shadownote">
-        <div class="galleryL">
-          <img src="https://ncleardev.github.io/shadownote/ico.png" alt="ShadowNote Icon">
-          <h3>ShadowNote - take notes quickly</h3>
-        </div>
+        <img
+        class="portrait"
+          src="files/android.webp"
+          alt="Screenshot of Android app">
+        <h3>Android apps</h3>
       </a>
     </div>
-    <h2 style="margin-top: 100px;">Links</h2>
+
+    <h2 style="margin-top: 50px;">Links</h2>
     <div id="contact">
       <a class="button" id='dc' href="#contact" onclick="msg()" aria-label="Discord"><img src="files/discord.png"
           alt="Discord icon"></a>
@@ -98,6 +90,7 @@
       <a class="button" id='email' href="#contact" onclick="msg2()" aria-label="Email"><img src="files/email.png"
           alt="Email icon"></a>
     </div>
+    
     <!--<div class="line"></div>
     <div>
       <a href="https://hits.seeyoufarm.com" target="_blank">
@@ -109,6 +102,7 @@
     </div>-->
     <div style="height: 100px;"></div>
     <a href="#top" aria-label="Scroll to top" id="end">></a>
+  </div>
   </div>
 </body>
 
