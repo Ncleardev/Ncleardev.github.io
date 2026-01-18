@@ -118,6 +118,7 @@ html {
 }
 
 .topnav {
+  box-sizing: border-box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
