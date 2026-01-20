@@ -134,7 +134,6 @@ html {
 
 .topnav a, text {
   display: inline-block;
-  text-shadow: none;
   font-size: xx-large;
   padding: 15px 15px;
   transition: 0.4s all ease;
@@ -190,16 +189,12 @@ a:visited {
 
 .button {
   display: inline-block;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
   padding: 10px 10px;
   border-radius: 25px;
   height: 50px;
   width: 50px;
   margin: 10px;
   cursor: pointer;
-  border: 2px solid rgba(255, 255, 255, 0.1);
   transition: 1s;
 }
 
@@ -208,41 +203,40 @@ a:visited {
   max-height: 100%;
 }
 
+.button:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transition: 0s;
+}
+
 #dc:hover {
   background: #5865F2;
   box-shadow: 0 0px 10px #5865F2, 0 0px 20px #5865F2;
-  transition: 0s;
 }
 
 #github:hover {
   background: #555;
   box-shadow: 0 0px 10px #555, 0 0px 20px #555;
-  transition: 0s;
 }
 
 #reddit:hover {
   background: #FF5700;
   box-shadow: 0 0px 10px #FF5700, 0 0px 20px #FF5700;
-  transition: 0s;
 }
 
 #yt:hover {
   background: red;
   box-shadow: 0 0px 10px red, 0 0px 20px red;
-  transition: 0s;
 }
 
 #email:hover {
   background: rgb(21, 170, 170);
   box-shadow: 0 0px 10px rgb(21, 170, 170), 0 0px 20px rgb(21, 170, 170);
-  transition: 0s;
 }
 
 #end {
   opacity: 0;
+  pointer-events: none;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.35);
-  color: black;
   border-radius: 50%;
   transform: rotate(270deg);
   font-size: 28px;
@@ -251,25 +245,15 @@ a:visited {
   height: 50px;
   bottom: 20px;
   right: 20px;
-  transition: 0.3s all;
+  transition: opacity .3s, background-color 1s, color 1s, box-shadow 1s;
   z-index: 999;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 #end:hover {
   background-color: white;
+  color: black;
   box-shadow: white 0 0 10px, white 0 0 20px;
-  transition: 0.15s all;
-}
-
-.line {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  box-shadow: white 0px 0px 7px;
+  transition: opacity .3s, background-color 0s, color 0s, box-shadow 0s;
 }
 
 h2 {
@@ -278,14 +262,15 @@ h2 {
 
 h2:before,
 h2:after {
-  background-color: white;
+  background: rgba(255, 255, 255, .9);
   content: "";
   display: inline-block;
   height: 3px;
   position: relative;
   vertical-align: middle;
   width: 50%;
-  box-shadow: white 0px 0px 7px;
+  box-shadow: white 0 0 10px, white 0 0 20px;
+
 }
 
 h2:before {
@@ -312,16 +297,10 @@ h2:after {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .projects a:hover {
@@ -329,6 +308,8 @@ h2:after {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+  text-shadow: 0 0 10px white;
 }
 
 .projects img {
@@ -340,10 +321,6 @@ h2:after {
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
-img.portrait {
-  object-position: center 20%;
-}
-
 .projects h3 {
   margin: 0;
   padding: 1.5rem;
@@ -351,5 +328,11 @@ img.portrait {
   font-size: 1.5rem;
   letter-spacing: 0.5px;
   text-align: center;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.projects a, .button, #end {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
