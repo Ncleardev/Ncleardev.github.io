@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="speedometer, gps speedometer, gps speedometer premium">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="description" content="Accurate, ad-free GPS speedometer for Android—simple, straightforward, and feature-packed.">
+  <meta name="description" content="Help & FAQ for GPS Speedometer Premium">
   <meta name="author" content="Ncleardev">
   <link rel="icon" href="ico.png">
   <meta name="color-scheme" content="dark light">
+  <link href="help.css" rel="stylesheet">
+  <script src="help.js"></script>
 </head>
 
 <body>
@@ -18,8 +20,8 @@
     <div id="img1">
       <div id="img2"></div>
     </div>
-    <h1>GPS Speedometer Premium<text id="acc">_</text></h1>
-    <p>Accurate, ad-free GPS speedometer — simple, straightforward, and feature-packed.</p>
+    <h1>GPS Speedometer Premium</h1>
+    <h4>Accurate, ad-free GPS speedometer — simple, straightforward, and feature-packed.</h4>
     <h2><a href="https://ncleardev.github.io/android/speedometer/">Back to main website</a></h2>
   </header>
 
@@ -28,39 +30,98 @@
     <section>
       <h2>Frequently Asked Questions:</h2>
       <div class="center" id="help">
-        <text>
-          <a class="accordion">GPS speed differs from that indicated by the vehicle's speedometer.</a>
-          <div class="panel">
-            Vehicle speedometers are typically designed to slightly overestimate speed as a safety measure and to comply with regulations that prohibit them from underreporting. This ensures drivers are not unintentionally speeding. In contrast, GPS devices calculate speed based on satellite data, offering a more precise and unbiased measurement. Variations can also result from factors like tire size, pressure, or wear affecting the vehicle's calibration.
-          </div>
-          <a class="accordion">The speed never shows up, but the location appears in other apps.</a>
-          <div class="panel">
-            GPS Speedometer Premium relies solely on the GPS sensor to provide accurate speed readings.
-Other apps may show your location using Wi-Fi or mobile networks, which are helpful for faster location initialization and indoor positioning — especially when GPS signals are blocked by ceilings or buildings. However, this network-based data lacks the precision needed to calculate speed accurately. To ensure reliable results, speed is only displayed when a strong GPS signal is available.
-More information is available at <a target="_blank" href="https://www.gps.gov/gps-accuracy-0">https://www.gps.gov/gps-accuracy-0</a>
-          </div>
-          <a class="accordion">Why is the speed inaccurate? / How accurate is GPS for speed measurement?</a>
-          <div class="panel">
-            More information is available at <a target="_blank" href="https://www.gps.gov/gps-accuracy-0">https://www.gps.gov/gps-accuracy-0</a>
-          </div>
-          <a class="accordion">The speed appears delayed.</a>
-          <div class="panel">
-            GPS updates your location roughly every one second. A current location alone is not sufficient for measuring the speed. However, by using the formula:<br><text style="font-family: monospace;">speed = distance / time<br>
-              Distance: The GPS calculates the distance between the current location (newest position) and the previous location (from 1 second ago)<br>
-              Time: The time interval between these two location updates is usually 1 second, but can occasionally take longer if GPS signal is lost, which is taken into account              
-            </text><br>
-            it's possible to calculate it. This means the speed displayed is not the instantaneous speed at the exact moment but rather the average speed over the previous second. Additionally, the GPS signal must travel between satellites and the device, which increases the delay even further.
-            <br><br>Also please note that enabling Smoother speed changes in the Advanced section adds further delay.            
-          </div>
-          <a class="accordion">Is the app compatible with Android Auto?</a>
-          <div class="panel">
-              GPS Speedometer Premium is not compatible with Android Auto. Currently, Google only allows specific categories of apps—such as navigation, media, and messaging—to be integrated with Android Auto. Speedometer apps do not fall within the supported categories and are therefore not eligible for Android Auto compatibility.
-              <br><br>While it's technically possible to adapt the app for Android Auto, the strict rules and limitations would demand significant changes to its design and functionality. Ultimately, it would need to operate much like a full navigation app—displaying a fullscreen map with only a small speed indicator—which goes against the main purpose of the app.
-          </div>
-        </text>
-      </div>
-    </section>
-  </main>
+
+<a class="accordion">Why does the GPS speed differ from my vehicle's speedometer?</a>
+<div class="panel"><div class="inner">If you notice that the app shows a slightly lower speed than your dashboard, this is completely normal. If the signal is strong and stable, your GPS speed is often closer to reality.
+• In many regions around the world, vehicle manufacturers are prohibited from building speedometers that underreport your speed. To ensure you don't accidentally get a speeding ticket, speedometers are calibrated at the factory to read slightly higher than you are actually traveling.
+• Variations can also result from factors like tire size, pressure, or wear affecting the vehicle's calibration.
+• The app calculates your speed based on satellite positioning over time and provides an independent of vehicle calibration measurement.</div></div>
+     
+
+<a class="accordion">Why does my speed not show up, even though other apps show my location?</a>
+<div class="panel"><div class="inner">GPS Speedometer Premium relies solely on the GPS sensor to provide accurate speed readings.
+Other apps may show your location using Wi-Fi or mobile networks, which are helpful for a faster location fix and indoor positioning - especially when GPS signals are blocked by ceilings or buildings. However, this network-based data lacks the precision needed to calculate speed accurately. To ensure reliable results, speed is only displayed when a strong GPS signal is available.
+
+Having <a href="javascript:document.getElementById('dual').showModal()">Dual-Frequency GPS</a> and <a href="javascript:document.getElementById('assist').showModal()">Assisted GPS</a> greatly helps.
+
+More information is available at <a target="_blank" href="https://www.gps.gov/gps-accuracy-0">https://www.gps.gov/gps-accuracy-0</a></div></div>
+  
+
+<a class="accordion">Why is the speed inaccurate? / How accurate is GPS for speed measurement?</a>
+<div class="panel"><div class="inner">Mobile devices are not professional-grade GPS devices. The app can only be as accurate as the data your phone's hardware provides.
+
+Having <a href="javascript:document.getElementById('dual').showModal()">Dual-Frequency GPS</a> and <a href="javascript:document.getElementById('assist').showModal()">Assisted GPS</a> greatly helps.
+
+More information is available at <a target="_blank" href="https://www.gps.gov/gps-accuracy-0">https://www.gps.gov/gps-accuracy-0</a></div></div>
+<a class="accordion">Why does the speed appear delayed?</a>
+<div class="panel"><div class="inner">Because GPS measures your location, not your instantaneous speed. A single location point isn't enough to determine how fast you are going - the app needs to measure how your position changes over time.
+To calculate your speed, the app uses a simple formula* (Speed = Distance / Time):
+• Distance: It compares your current location with your previous location.
+• Time: It measures the time elapsed between those two points (typically about one second).
+Because of this process, the number you see on the screen is actually your average speed over the last second, rather than an exact, real-time snapshot.
+Additionally, you might notice a slightly longer delay if the GPS signal is weak, lost, or obstructed.
+
+* This is a simplified, general explanation. In reality more happens behind the scenes, such as taking into account Doppler measurements from GPS satellites.</div></div>
+ 
+
+<a class="accordion">Why is the "GPS signal unreliable" warning always visible?</a>
+<div class="panel"><div class="inner">This warning appears when the app detects that your device's speed accuracy (the estimated margin of error provided by your phone's Android system) is low.
+The warning may appear from two, different reasons:
+
+1. The accuracy value is constantly fluctuating
+This is normal behavior for a weak GPS signal. Your device is struggling to get a highly precise GPS lock, indicating that a clear path to GPS satellites is unavailable.
+Consider moving to a more open area if possible. You can also increase the tolerance threshold in the app's Settings, or disable the warning completely.
+
+2. The accuracy value is stuck on the exact same number
+If the accuracy number is completely frozen but your speed is still updating normally, this points to a software bug in your specific phone's firmware. The device is sending the app a placeholder value instead of properly calculating your speed accuracy.
+Because the app cannot read the true accuracy data from your phone, your only option is to disable this warning entirely in the app's Settings.</div></div>
+
+<a class="accordion">Why does the speed fluctuate even when I am standing still?</a>
+<div class="panel"><div class="inner">Because GPS calculates your position based on satellite signals, your determined location is rarely perfectly still - it actually drifts slightly within a small radius.
+When you first start the app, your phone is still calibrating its connection to the satellites. Until you move a short distance (roughly several dozen feet/meters), the device may struggle to distinguish between actual movement and signal noise.
+
+All GPS devices have a specific horizontal accuracy. If your "location" jumps to the left and then to the right, the app's formula (distance/time) interprets that jump as movement, resulting in a low speed reading.
+
+If you are near tall buildings, under a bridge, or even under heavy tree cover, satellite signals can "bounce" off these obstacles, causing your reported position to skip around even more erratically.
+
+Usually, simply driving for a minute allows the hardware to calibrate itself and filter out this noise. Having <a href="javascript:document.getElementById('dual').showModal()">Dual-Frequency GPS</a> greatly helps.</div></div>
+
+<a class="accordion">Why does the app consume so much battery?</a>
+<div class="panel"><div class="inner">Speedometer and navigation apps usually drain your battery faster than regular apps.
+The app must keep your phone's physical GPS hardware actively communicating with satellites every single second of your trip.
+Also, during the day, the car interior is generally well lit, requiring higher brightness of your screen than usual.
+To minimize battery drain, consider manually lowering your phone's screen brightness. As a last resort, you may enable Battery / power saving mode in your device's system settings, but please note that this will generally greatly reduce GPS accuracy.</div></div>
+          
+
+<a class="accordion">Is the app compatible with Android Auto?</a>
+<div class="panel"><div class="inner">GPS Speedometer Premium is not compatible with Android Auto. Currently, Google only allows specific categories of apps - such as navigation, media, and messaging - to be integrated with Android Auto. Speedometer apps do not fall within the supported categories and are therefore not eligible for Android Auto compatibility.
+While it's technically possible to adapt the app for Android Auto, the strict rules and limitations would demand significant changes to its design and functionality. Ultimately, it would need to operate much like a full navigation app - displaying a fullscreen map with only a small speed indicator - which goes against the main purpose of the app.</div></div>
+
+<h2>Premium+ & Premium+ Navigator Help:</h2>
+<a class="accordion">How can I request a refund?</a>
+<div class="panel"><div class="inner">All purchases are handled via Google Play. As such, refund requests are recommended to be made directly through Google Play and are subject to its policies.
+For more information on refunds and how to request one, please refer to <a href="https://support.google.com/googleplay/answer/15574897" target="_blank">Google Play Support page</a> and <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google Play's refund policy</a>.</div></div>
+<a class="accordion">I made a purchase, but it isn't showing up in the app. What should I do?</a>
+<div class="panel"><div class="inner">Sometimes there is a slight delay in processing the transaction. Try the following steps:
+
+1. Verify that you received the order receipt in your email inbox.
+2. Check your internet connection.
+3. Completely close and restart the app.
+4. Try restarting your device.
+5. Ensure you are logged into the correct Google Play account.
+
+If the issue persists, please contact the developer directly via email.</div></div>
+<a class="accordion">If I get a new phone or reinstall the app, do I have to pay again?</a>
+<div class="panel"><div class="inner">No, as long as you are logged into the same Google Play account you used to make the original purchase. Your purchases and active subscriptions are tied to your Google account, not your physical device. Purchases are restored automatically when you open the app. If there are any issues, please make sure you have internet connection and verify that you installed the app via the same Google account. If the issue persists, please contact the developer directly via email.
+
+<b style="color: white;">Warning: Please note that in the process you may lose all saved trips, in a case where Android's default backup feature fails. Backup/Restore function is coming soon in an upcoming update.</b></div></div>
+<a class="accordion">How do I cancel my subscription?</a>
+<div class="panel"><div class="inner">If you wish to cancel your subscription, you may do so in the app settings, or by heading directly to the subscriptions page in the Google Play Store application.</div></div>
+
+
+</div>
+</section>
+</main>
 
   <footer style="padding-bottom: 100px;">
     If you've got any other questions:
@@ -69,202 +130,16 @@ More information is available at <a target="_blank" href="https://www.gps.gov/gp
   </footer>
 
   <div id="toTop"></div>
+
+  <dialog id="dual">
+  <p>Newer, high-end phones use two different satellite signals simultaneously. This helps filter out errors caused by signals bouncing off buildings or trees, providing much higher precision. Please check online whether your device supports it.</p>
+  <button commandfor="dual" command="close">OK</button>
+</dialog>
+  <dialog id="assist">
+  <p>This technology uses cellular data to help your phone "find" satellites much faster. More information: <a href="https://en.wikipedia.org/wiki/Assisted_GNSS" target="_blank">https://en.wikipedia.org/wiki/Assisted_GNSS</a></p>
+  <button commandfor="assist" command="close">OK</button>
+</dialog>
 </body>
 
-<style>
-  @keyframes welcome {
-
-    0%,
-    10% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  body {
-    margin: 0;
-    font-family: Lato, Arial, sans-serif;
-    background-color: #212121;
-    color: #f0f0f0;
-    transform-origin: top center;
-    animation: welcome 2s cubic-bezier(0.2, 0.8, 0.2, 1);
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  html {
-    background-color: #111111;
-  }
-
-  header,
-  footer {
-    text-align: center;
-    padding: 2em;
-    background-color: #111111;
-  }
-
-  main {
-    padding: 1em 2em;
-  }
-
-  ul {
-    list-style: disc;
-    padding-left: 1.5em;
-  }
-
-  b {
-    color: #a0a0a0;
-  }
-
-  @keyframes pointer {
-    50% {
-      rotate: 270deg;
-    }
-
-    100% {
-      rotate: 0deg;
-    }
-  }
-
-  #img1 {
-    background-image: url('img_1.webp');
-    width: 150px;
-    height: 150px;
-    background-size: contain;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #img2 {
-    background-image: url('img_2.webp');
-    width: 150px;
-    height: 150px;
-    background-size: contain;
-    animation: pointer 2s ease-in-out 0.5s;
-  }
-
-  @keyframes acc {
-    100% {
-      opacity: 0;
-    }
-  }
-
-  #acc {
-    animation: acc 1s infinite ease-out;
-  }
-
-  a:any-link {
-    line-break: anywhere;
-    text-decoration: underline;
-    color: rgb(100, 172, 255)
-  }
-
-  #toTop {
-    display: none;
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(90px);
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    z-index: 999;
-    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s linear, box-shadow 0.5s linear;
-    background-image: url('top.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  #toTop:active {
-    background-color: white;
-    box-shadow: white 0 0 10px, white 0 0 20px;
-    transition: 0s all;
-  }
-
-  .accordion {
-    cursor: pointer;
-    font-size: large;
-    transition: 1s all;
-  }
-
-  .active {
-    color: rgb(100, 172, 255);
-    transition: 0s all;
-  }
-
-  .panel {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .7s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toTop = document.getElementById('toTop');
-    toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-    toTop.style.display = "block";
-    let b = false;
-
-    document.onscroll = function () {
-      if ((window.scrollY > window.innerHeight / 2) !== b) {
-        b = !b;
-        toTop.style.opacity = b ? 1 : 0;
-        toTop.style.transform = b ? "translateY(0)" : "translateY(90px)";
-        toTop.style.pointerEvents = b ? "auto" : "none";
-      }
-    };
-  });
-
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      for (let j = 0; j < acc.length; j++) {
-        if (acc[j] !== this) {
-          acc[j].classList.remove("active");
-          acc[j].nextElementSibling.style.maxHeight = null;
-        }
-      }
-
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-
-      //const y = this.getBoundingClientRect().top + window.scrollY;
-      //setTimeout(() => window.scroll({ top: y, behavior: 'smooth' }), 100);
-    });
-  }
-
-
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'ar,cs,de,el,es,fr,hi,hr,hu,id,it,ja,ms,pl,pt,ro,ru,sk,sl,th,tr,uk,uz,vi,zh',
-      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-    }, 'google_translate_element');
-  }
-
-</script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>
-

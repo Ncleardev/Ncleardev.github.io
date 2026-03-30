@@ -1,0 +1,260 @@
+  @keyframes welcome {
+      0%,
+      20% {
+          opacity: 0;
+          transform: scale(0.9);
+      }
+
+      100% {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  body {
+      margin: 0;
+      font-family: Lato, Arial, sans-serif;
+      background-color: #212121;
+      color: #f0f0f0;
+      transform-origin: top center;
+      animation: welcome 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+  }
+
+  html {
+      background-color: #111111;
+  }
+
+  header,
+  footer {
+      text-align: center;
+      padding: 2em;
+      background-color: #111111;
+  }
+
+  main {
+      padding: 1em 1em;
+  }
+
+  b {
+      color: #a0a0a0;
+  }
+
+  @keyframes pointer {
+      50% {
+          rotate: 270deg;
+      }
+
+      100% {
+          rotate: 0deg;
+      }
+  }
+
+  #img1 {
+      background-image: url('img_1.webp');
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  #img2 {
+      background-image: url('img_2.webp');
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+      animation: pointer 2s ease-in-out 0.5s;
+  }
+
+  a:any-link {
+      line-break: anywhere;
+      text-decoration: underline;
+      color: rgb(100, 172, 255)
+  }
+
+  #toTop {
+      display: none;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(90px);
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      z-index: 999;
+      transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s linear, box-shadow 0.5s linear;
+      background-image: url('top.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  #toTop:active {
+      background-color: white;
+      box-shadow: white 0 0 10px, white 0 0 20px;
+      transition: 0s all;
+  }
+
+.accordion {
+    position: relative;
+    display: block;
+    padding: 15px 10px;
+    padding-right: 40px;
+    cursor: pointer;
+    font-size: large;
+    transition: 1s color;
+    border: 2px solid #555555;
+    border-bottom: 2px solid #555555;
+    margin-top: -2px;
+    color: #a8c7fa;
+    transition: .3s all;
+}
+
+.accordion::after {
+    content: "";
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('drop.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.25s ease-out;
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.accordion.active {
+    background-color: #313846;
+}
+
+.accordion.active::after {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.panel {
+overflow: hidden;
+transition: max-height .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inner {
+    white-space: pre-wrap;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    
+    padding-left: 12px;
+    
+    position: relative; /* Keeping this here is fine since .panel::before needs it! */
+}
+
+.inner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #555555;
+}
+
+  #goog-gt-tt {
+    position: fixed !important;
+    top: 50px !important;
+  }
+
+  font {
+      background-color: transparent !important;
+      box-shadow: none !important;
+  }
+
+  dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  padding-top: 0;
+  background: rgba(55, 55, 55, 0.85); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Frosted glass */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Soft, deep shadow */
+  max-width: 400px;
+  width: 80%;
+  
+  opacity: 0;
+  transform: scale(.9);
+  transition: 
+    opacity .15s ease-out, 
+    transform .15s ease-out,
+    display .15s ease allow-discrete, 
+    overlay .15s ease allow-discrete;
+}
+
+dialog button {
+    background-color: transparent;
+    border: none;
+    float: right;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background-color: #555555;
+}
+
+/* 2. Define the "Closed" state explicitly */
+dialog:not([open]) {
+  opacity: 0;
+  transform: scale(.9);
+}
+
+/* 3. Apply the same logic to the backdrop */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  transition: 
+    display .15s allow-discrete, 
+    overlay .15s allow-discrete, 
+    opacity .15s linear;
+  opacity: 0;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+/* Open state styles */
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* New CSS 2026 feature for entrance animations */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(.9);
+  }
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  backdrop-filter: blur(4px); /* Blur content behind modal */
+  transition: opacity .15s linear;
+  opacity: 0;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
