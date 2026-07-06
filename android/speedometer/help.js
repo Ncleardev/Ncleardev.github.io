@@ -24,31 +24,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const accordions = document.querySelectorAll(".accordion");
+    const toggleAccordion = (clickedAccordion) => {
+        accordions.forEach(a => {
+            const panel = a.nextElementSibling;
+
+            if (a === clickedAccordion) {
+                const isClosed = panel.style.maxHeight === "0px" || panel.style.maxHeight === "";
+
+                if (isClosed) {
+                    a.classList.add("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } else {
+                    a.classList.remove("active");
+                    panel.style.maxHeight = "0px";
+                }
+            } else {
+                a.classList.remove("active");
+                panel.style.maxHeight = "0px";
+            }
+        });
+    };
+
     accordions.forEach(acc => {
         acc.nextElementSibling.style.maxHeight = "0px";
         acc.nextElementSibling.innerHTML = acc.nextElementSibling.innerHTML.replaceAll("\n", "<br>");
 
         acc.addEventListener("click", function () {
-            accordions.forEach(a => {
-                const panel = a.nextElementSibling;
-
-                if (a === this) {
-                    const isClosed = panel.style.maxHeight === "0px";
-
-                    if (isClosed) {
-                        a.classList.add("active");
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    } else {
-                        a.classList.remove("active");
-                        panel.style.maxHeight = "0px";
-                    }
-                } else {
-                    a.classList.remove("active");
-                    panel.style.maxHeight = "0px";
-                }
-            });
+            toggleAccordion(this);
         });
     });
+
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        const targetAccordion = document.getElementById(hash);
+        if (targetAccordion && targetAccordion.classList.contains("accordion")) {
+            toggleAccordion(targetAccordion);
+            window.setTimeout(() => {
+                targetAccordion.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+        }
+    }
 
     const observer = new ResizeObserver(entries => {
         entries.forEach(entry => {
